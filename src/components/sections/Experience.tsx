@@ -74,7 +74,7 @@ const Experience: React.FC = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.35, delay: i * 0.06 + 0.08 }}
-                  className="absolute right-4 top-4 hidden rounded-full px-3 py-1 text-[11px] font-semibold bg-white/6 backdrop-blur-md border border-white/10 text-white shadow-sm md:block"
+                  className="absolute right-4 top-4 hidden rounded-full px-4 py-2 text-sm font-semibold bg-white/6 backdrop-blur-md border border-white/12 text-white shadow-md md:block"
                 >
                   {e.dates}
                 </motion.div>
@@ -99,9 +99,7 @@ const Experience: React.FC = () => {
                     </ul>
                   </div>
 
-                  <div className="flex flex-none flex-col items-end text-right">
-                    <span className="text-sm text-slate-100/80">{e.dates}</span>
-                  </div>
+                  {/* date is shown in the glass pill at the top-right; remove the duplicate static date here */}
                 </div>
               </Card>
             </motion.li>
