@@ -58,8 +58,9 @@ const Navbar: React.FC = () => {
 
   return (
     <header
+      style={{ fontFamily: 'Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial' }}
       className={clsx(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 antialiased font-sans',
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 antialiased',
         isScrolled
           ? 'border-b border-white/10 bg-[rgba(9,6,18,0.85)] shadow-[0_12px_32px_rgba(8,0,20,0.4)]'
           : 'border-b border-white/5 bg-[rgba(14,8,24,0.6)]'
