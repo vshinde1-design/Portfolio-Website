@@ -1,0 +1,786 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light theme HSL variables */
+  --background: 25 95% 98%; /* very light warm background */
+  --foreground: 220 12% 8%; /* keep dark readable text */
+
+  /* Sunset palette (H S L) */
+  --primary: 24 100% 58%; /* sunset orange (#FF8C42) */
+  --secondary: 348 100% 66%; /* pink-orange (#FF5E78) */
+  --accent: 328 48% 45%; /* magenta (#C63A76) */
+  --sunset-deep: 268 45% 24%; /* deep purple (#3D1E6D) */
+  --night-violet: 280 60% 7%; /* near #1A0B2E */
+  --muted: 30 18% 92%; /* light muted */
+  --border: 20 80% 78%;
+
+  --glass-bg: 0 0% 100% / 0.6;
+
+  /* Dynamic sunset gradient controls */
+  --sunset-progress: 0;
+  --sunset-top: #1a1030;
+  --sunset-mid: #2a1448;
+  --sunset-bottom: #d46c92;
+  --sunset-top-light: #ffe8e2;
+  --sunset-mid-light: #ffd0dc;
+  --sunset-bottom-light: #ffafc8;
+
+  /* Repeating analytic grid */
+  --global-grid: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http://www.w3.org/2000/svg%27%20viewBox%3D%270%200%2016%2016%27%20fill%3D%27none%27%3E%3Cpath%20d%3D%27M8%201.5V14.5M1.5%208H14.5%27%20stroke%3D%27%23ffffff%27%20stroke-opacity%3D%270.06%27%20stroke-width%3D%270.9%27%20stroke-linecap%3D%27round%27/%3E%3C/svg%3E");
+  /* responsive horizontal gutter used to space glass panels from section edges */
+  --section-horizontal-gutter: clamp(1rem, 6vw, 96px);
+  /* how much to darken the section surface (0 = transparent, 1 = black) */
+  --sections-surface-dim: 0.22;
+  /* darkness applied to glass panels (0..1) - used instead of dimming whole section surface */
+  --glass-darkness: 0.9;
+  --bg-dim: 0.18;
+}
+
+.dark {
+  --background: 280 60% 5%; /* deep night violet */
+  --foreground: 30 100% 96%; /* light text for dark */
+  --primary: 24 100% 62%; /* brighter orange accent in dark */
+  --secondary: 348 100% 60%;
+  --accent: 328 60% 62%;
+  --muted: 275 22% 12%;
+  --border: 300 40% 12%;
+
+  --glass-bg: 280 16% 8% / 0.28;
+  --bg-dim: 0.06;
+  --sections-surface-dim: 0.28;
+  --glass-darkness: 0.9;
+  /* Dark/starry theme overrides */
+  --sunset-top: #07030b;
+  --sunset-mid: #0a0814;
+  --sunset-bottom: #08051a;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply text-[hsl(var(--foreground))] antialiased;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial;
+  line-height: 1.6;
+  background-color: #07030b;
+  overflow-x: hidden;
+}
+
+/* ========== GLOBAL ANIMATED BACKGROUNDS ========== */
+
+/* Full-screen animated ambient gradient */
+.animated-gradient {
+  position: absolute;
+  inset: 0;
+  z-index: -20;
+  pointer-events: none;
+  background-size: 200% 200%;
+  animation: bgShift 28s linear infinite;
+}
+
+/* Dark mode animated gradient (deep indigo -> purple) */
+.dark .animated-gradient {
+  /* fully disable the animated gradient in dark theme to let star layers show through */
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Light mode animated gradient (soft lavender/blue) */
+.light .animated-gradient,
+:root.light-mode .animated-gradient {
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 177, 153, 1) 0%,
+    rgba(255, 140, 66, 1) 40%,
+    rgba(255, 94, 120, 1) 100%
+  );
+  animation-duration: 20s;
+}
+
+@keyframes bgShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: hue-rotate(6deg);
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Hero-specific animated gradient for subtle shifts */
+.hero-animated {
+  position: absolute;
+  inset: 0;
+  z-index: -15;
+  pointer-events: none;
+  background-size: 300% 300%;
+  animation: heroShift 24s ease-in-out infinite;
+  mix-blend-mode: overlay;
+  opacity: 0.85;
+}
+
+.dark .hero-animated {
+  /* Subtle darker hero accents (reduced saturation and opacity) */
+  background-image:
+    radial-gradient(
+      1200px 600px at 30% 30%,
+      rgba(255,255,255,0.02),
+      rgba(255,255,255,0.01) 40%,
+      rgba(7,3,11,0.75) 75%
+    ),
+    radial-gradient(
+      900px 400px at 70% 70%,
+      rgba(255,255,255,0.01),
+      rgba(8,6,16,0.08)
+    );
+  opacity: 0.6;
+}
+
+.light .hero-animated,
+:root.light-mode .hero-animated {
+  background-image:
+    radial-gradient(
+      1200px 600px at 30% 30%,
+      rgba(255, 177, 153, 0.78),
+      rgba(255, 140, 66, 0.56) 40%,
+      rgba(255, 94, 120, 0.32) 75%
+    ),
+    radial-gradient(
+      900px 400px at 70% 70%,
+      rgba(198, 58, 118, 0.42),
+      rgba(63, 30, 109, 0.28)
+    );
+}
+
+@keyframes heroShift {
+  0% {
+    background-position: 0% 50%, 100% 50%;
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    background-position: 50% 60%, 50% 40%;
+    filter: hue-rotate(4deg);
+  }
+  100% {
+    background-position: 0% 50%, 100% 50%;
+    filter: hue-rotate(0deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-animated {
+    animation: none;
+  }
+}
+
+/* Hero gradient utility */
+@keyframes hero-gradient-move {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.animate-hero-gradient {
+  background-size: 220% 220%;
+  animation: hero-gradient-move 22s ease-in-out infinite;
+}
+
+/* Generic animated gradient utility */
+@keyframes gradient-move {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-move 25s ease-in-out infinite;
+}
+
+/* Dark variant for animate-gradient (indigo/purple tones) */
+.dark .animate-gradient {
+  background-image:
+    radial-gradient(
+      800px 400px at 20% 20%,
+      rgba(255,255,255,0.01),
+      transparent 30%
+    ),
+    radial-gradient(
+      900px 500px at 80% 80%,
+      rgba(255,255,255,0.01),
+      transparent 40%
+    ),
+    linear-gradient(120deg, rgba(7,3,11,1), rgba(10,6,20,1));
+}
+
+/* Light variant for animate-gradient (soft lavender) */
+.light .animate-gradient,
+:root.light-mode .animate-gradient {
+  background-image:
+    radial-gradient(
+      800px 400px at 20% 20%,
+      rgba(255, 177, 153, 0.6),
+      transparent 30%
+    ),
+    radial-gradient(
+      900px 500px at 80% 80%,
+      rgba(255, 140, 66, 0.5),
+      transparent 40%
+    ),
+    linear-gradient(120deg, rgba(255, 240, 235, 1), rgba(255, 230, 238, 1));
+  animation-duration: 20s;
+}
+
+/* subtle float animation for SVG decor */
+@keyframes floatY {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float-slow {
+  animation: floatY 8s ease-in-out infinite;
+}
+
+/* subtle twinkle for small decorative SVGs */
+@keyframes twinkle {
+  0% { opacity: 0.75; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.01); }
+  100% { opacity: 0.78; transform: scale(1); }
+}
+
+.twinkle-slow {
+  animation: twinkle 9s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .float-slow {
+    animation: none;
+  }
+  .animate-hero-gradient {
+    animation: none;
+  }
+  .twinkle-slow {
+    animation: none;
+  }
+}
+
+/* ========== APP BACKGROUND (SCROLL-REACTIVE) ========== */
+
+.app-bg {
+  position: relative;
+  isolation: isolate;
+  background: linear-gradient(
+    180deg,
+    var(--sunset-top) 0%,
+    var(--sunset-mid) 55%,
+    var(--sunset-bottom) 100%
+  );
+  background-attachment: fixed;
+  overflow: hidden;
+  transition: background 0.6s ease;
+}
+
+:root.light-mode .app-bg,
+.light .app-bg {
+  background: linear-gradient(
+    180deg,
+    var(--sunset-top-light) 0%,
+    var(--sunset-mid-light) 55%,
+    var(--sunset-bottom-light) 100%
+  );
+}
+
+.app-bg::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  /* dim overlay above animated gradients but behind content */
+  z-index: -9;
+  background: rgba(0,0,0,var(--bg-dim));
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-bg {
+    transition: none;
+    background-attachment: scroll;
+  }
+}
+
+/* ========== SECTION LAYOUT & SURFACE ========== */
+
+/* Main vertical surface wrapper – now transparent so dynamic bg shows */
+.sections-surface {
+  position: relative;
+  isolation: isolate;
+  z-index: 0;
+  background: transparent;
+  padding-top: clamp(2rem, 5vw, 3rem);
+  padding-bottom: clamp(4rem, 8vw, 6.5rem);
+}
+
+/* Ensure section wrappers (and their glass containers) are centered */
+.sections-surface {
+  display: block; /* allow sections to flow full width */
+}
+
+/* remove old gradient overlay – keep it off */
+.sections-surface::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  /* keep transparent: we no longer dim the entire section surface here to avoid affecting background stars */
+  background: transparent;
+}
+
+/* Each section wrapper: controls stacking & spacing, no heavy bg */
+.section-wrapper {
+  position: relative;
+  isolation: isolate;
+  z-index: 1;
+  overflow: visible;
+}
+
+/* Make wrapper center its direct child so the glass stays horizontally centered */
+.section-wrapper {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: clamp(1.5rem, 4vw, 3rem);
+  margin-bottom: clamp(1.5rem, 4vw, 3rem);
+}
+
+@media (max-width: 640px) {
+  .section-wrapper {
+    margin-top: clamp(1rem, 6vw, 1.5rem);
+    margin-bottom: clamp(1rem, 6vw, 1.5rem);
+  }
+}
+
+/* Override inner max-width utilities so sections can expand to fill more screen */
+.sections-surface .max-w-6xl {
+  /* slightly narrower centered content area to reduce horizontal width a bit */
+  max-width: 1400px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Remove dark static card background – let app-bg + glass-card handle it */
+.section-wrapper::before,
+.section-wrapper::after {
+  content: none;
+}
+
+/* spacing between sections */
+.sections-surface > .section-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sections-surface > .section-wrapper + .section-wrapper {
+  margin-top: clamp(2.5rem, 7vw, 5rem);
+}
+
+@media (max-width: 640px) {
+  .sections-surface > .section-wrapper + .section-wrapper {
+    margin-top: clamp(2rem, 10vw, 3.5rem);
+  }
+}
+
+/* Light mode – keep background transparent here too */
+:root.light-mode .sections-surface,
+.light .sections-surface {
+  background: transparent;
+}
+
+:root.light-mode .sections-surface::before,
+.light .sections-surface::before {
+  background: transparent;
+}
+
+:root.light-mode .section-wrapper::before,
+.light .section-wrapper::before,
+:root.light-mode .section-wrapper::after,
+.light .section-wrapper::after {
+  content: none;
+}
+
+/* ========== CARDS / GLASS UI ========== */
+
+.glass-card {
+  position: relative;
+  background: linear-gradient(140deg, rgba(26,18,48,0.86) 0%, rgba(22,14,42,0.9) 60%, rgba(18,12,36,0.92) 100%);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 1rem;
+  box-shadow: 0 16px 48px rgba(8,4,26,0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 54px rgba(10, 6, 30, 0.4);
+  border-color: rgba(255, 200, 255, 0.12);
+}
+
+:root.light-mode .glass-card,
+.light .glass-card {
+  background: linear-gradient(
+    140deg,
+    rgba(255, 255, 255, 0.78) 0%,
+    rgba(255, 244, 248, 0.82) 100%
+  );
+  border-color: rgba(255, 160, 210, 0.22);
+  box-shadow: 0 18px 40px rgba(220, 160, 220, 0.18);
+}
+
+/* Liquid glass variant for prominent hero panels (inspired by iPhone liquid glass) */
+.glass-liquid {
+  position: relative;
+  /* larger corner radius for a pill-like curve */
+  border-radius: 3.5rem;
+  /* slightly darker panel so it reads a bit more black while retaining glass */
+  background-color: rgba(0,0,0,0.12);
+  background-image: none;
+  border: 1px solid rgba(255,255,255,0.03);
+  /* maintain frosted blur but increase depth for contrast */
+  backdrop-filter: blur(36px) saturate(130%) contrast(102%);
+  -webkit-backdrop-filter: blur(36px) saturate(130%) contrast(102%);
+  /* slightly deeper shadow to ground the panel */
+  box-shadow: 0 20px 64px rgba(0,0,0,0.44), inset 0 1px 0 rgba(255,255,255,0.03), inset 0 14px 36px rgba(255,255,255,0.015);
+  overflow: hidden;
+  transition: transform 300ms ease, box-shadow 300ms ease, background 300ms ease;
+}
+
+.glass-liquid::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  /* subtle frosted overlay only — keep low opacity so background shows */
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.008));
+  mix-blend-mode: screen;
+  transform: translateY(-2%);
+  filter: blur(10px) saturate(105%);
+  opacity: 0.28;
+}
+
+.glass-liquid::after {
+  /* very subtle sheen to keep a polished look without blocking background */
+  content: '';
+  position: absolute;
+  left: -36%;
+  top: -22%;
+  width: 220%;
+  height: 180%;
+  background: radial-gradient(40% 140% at 38% 30%, rgba(255,255,255,0.03), rgba(255,255,255,0.01) 40%, transparent 62%);
+  transform: rotate(22deg) translateX(-16%);
+  opacity: 0.14;
+  pointer-events: none;
+  animation: sheenMove 18s ease-in-out infinite;
+  mix-blend-mode: screen;
+  filter: blur(10px);
+}
+
+/* Make text inside the glass read glossy and slightly elevated */
+.glass-liquid :is(h1,h2,h3,p,a,button,span,div) {
+  color: rgba(255,255,255,0.94);
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 0 8px 30px rgba(0,0,0,0.5);
+}
+
+/* Preserve gradient headings (they use text-transparent/bg-clip) by avoiding overriding text color */
+.glass-liquid :is(h1) .text-transparent,
+.glass-liquid :is(h1) span.text-transparent {
+  color: transparent !important;
+  text-shadow: none !important;
+}
+
+@keyframes sheenMove {
+  0% { transform: rotate(22deg) translateX(-46%); }
+  50% { transform: rotate(22deg) translateX(6%); }
+  100% { transform: rotate(22deg) translateX(-46%); }
+}
+
+@media (max-width: 640px) {
+  .glass-liquid {
+    backdrop-filter: blur(16px) saturate(115%);
+    -webkit-backdrop-filter: blur(16px) saturate(115%);
+    box-shadow: 0 14px 36px rgba(6,6,20,0.36), inset 0 6px 22px rgba(124,58,237,0.025);
+    border-radius: 2rem;
+  }
+  .glass-liquid::after { opacity: 0.22; animation: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glass-liquid::after {
+    animation: none;
+    opacity: 0.35;
+  }
+  .glass-liquid {
+    transition: none;
+  }
+}
+
+/* standardized glass card styles */
+.glass {
+  background: rgba(26, 18, 48, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 12px 30px rgba(6, 4, 22, 0.4);
+  border-radius: 1rem;
+}
+
+.dark .glass {
+  background: rgba(16, 10, 32, 0.75);
+  border-color: rgba(198, 58, 118, 0.28);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.5);
+}
+
+.glass:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 48px rgba(10, 8, 26, 0.5);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+/* gradient heading utility */
+.text-gradient {
+  background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--secondary)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ========== UTILITIES & CONTAINERS ========== */
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:animate-slow {
+    animation: none;
+  }
+}
+
+.container {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* Normalize typography inside sections (keeps consistent sizes after the Hero) */
+.sections-surface {
+  /* Set a consistent readable base for all section content */
+  font-size: 1rem; /* 16px base */
+  line-height: 1.6;
+}
+
+/* Normalize common small text utility inside sections */
+.sections-surface .text-sm {
+  font-size: 0.9375rem; /* ~15px */
+}
+
+@media (max-width: 640px) {
+  .sections-surface {
+    font-size: 0.96875rem; /* ~15.5px on small screens for slightly better fit */
+    line-height: 1.55;
+  }
+  .sections-surface .text-sm {
+    font-size: 0.90625rem; /* ~14.5px */
+  }
+}
+
+/* Make section headings visually distinct but consistent across sections */
+.sections-surface .section-heading-sticky {
+  font-size: 1.75rem; /* ~28px for clear section titles */
+}
+
+@media (min-width: 640px) {
+  .sections-surface .section-heading-sticky {
+    font-size: 2.5rem; /* ~40px on larger screens */
+  }
+}
+
+/* Sticky centered section heading: stays vertically centered while its section is at the top of the viewport */
+.section-heading-sticky {
+  position: sticky;
+  /* place below the fixed navbar; adjust if your navbar height changes */
+  top: 72px;
+  transform: none;
+  z-index: 40;
+  text-align: center;
+  pointer-events: auto;
+  display: block;
+  margin: 0 auto clamp(1.5rem, 4vw, 3rem);
+}
+
+/* Premium heading treatment: stronger smoothing, tighter tracking, subtle depth and a soft decorative underline */
+.section-heading-sticky {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  /* tighter tracking for a more refined headline */
+  letter-spacing: -0.02em;
+  /* slightly heavier weight where available */
+  font-weight: 800;
+}
+
+.section-heading-sticky::after {
+  /* subtle centered glow/underline to add a refined accent */
+  content: '';
+  display: block;
+  margin: 0.6rem auto 0;
+  width: clamp(4rem, 12vw, 9rem);
+  height: 6px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, rgba(255,140,177,0.06), rgba(124,58,237,0.08), rgba(99,102,241,0.06));
+  filter: blur(6px);
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-heading-sticky::after { filter: none; }
+}
+
+/* On small screens, disable stickiness and fall back to normal flow */
+@media (max-width: 640px) {
+  .section-heading-sticky {
+    position: relative;
+    top: auto;
+    transform: none;
+    margin-top: 0.25rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.section-lg {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+/* ========== GLASS CONTAINER (SECTION WRAPPER) ========== */
+.glass-container {
+  width: 100%;
+  max-width: 1400px; /* constrain panel width so it doesn't span full viewport */
+  display: block;
+  border-radius: 1rem;
+  position: relative;
+  margin-left: auto; /* center */
+  margin-right: auto; /* center */
+}
+
+.glass-inner {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  /* Darker semi-opaque layer - controlled by --glass-darkness so we can animate without touching global overlays */
+  background: rgba(6,6,10,var(--glass-darkness));
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 14px 40px rgba(2,2,6,0.6);
+  transition: background 260ms ease, border-color 220ms ease, box-shadow 220ms ease;
+  backdrop-filter: blur(10px) saturate(110%);
+  -webkit-backdrop-filter: blur(10px) saturate(110%);
+}
+
+.glass-inner::before {
+  /* extra dim overlay for improved contrast */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.28));
+  pointer-events: none;
+}
+
+:root.light-mode .glass-inner,
+.light .glass-inner {
+  background: rgba(255,255,255,0.72);
+  border: 1px solid rgba(20,10,30,0.06);
+  box-shadow: 0 12px 32px rgba(220,200,220,0.12);
+  backdrop-filter: blur(8px) saturate(100%);
+  -webkit-backdrop-filter: blur(8px) saturate(100%);
+}
+
+/* spacing helpers to keep sections visually separate inside glass */
+.glass-inner > * {
+  position: relative;
+  z-index: 2; /* above the ::before dim overlay */
+}
+
+/* ===== Certification thumbnail glow & hover ===== */
+.cert-thumb {
+  transition: transform 280ms cubic-bezier(.2,.9,.2,1), box-shadow 280ms cubic-bezier(.2,.9,.2,1), filter 280ms ease;
+  will-change: transform, box-shadow, filter;
+  transform-origin: center;
+}
+.cert-thumb:hover,
+.cert-thumb.glow {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(79,70,229,0.12), 0 6px 30px rgba(99,102,241,0.08);
+  filter: drop-shadow(0 10px 30px rgba(79,70,229,0.08));
+}
+.cert-thumb:focus-visible {
+  outline: 3px solid rgba(99,102,241,0.14);
+  outline-offset: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cert-thumb,
+  .cert-thumb:hover,
+  .cert-thumb.glow {
+    transform: none;
+    transition: none;
+    box-shadow: none;
+    filter: none;
+  }
+}
+
+/* subtle vertical separator used between cert text and image on md+ */
+.cert-sep {
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(124,58,237,0.06));
+  box-shadow: 0 0 20px rgba(99,102,241,0.02) inset;
+  border-radius: 9999px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cert-sep { transition: none; }
+}
+

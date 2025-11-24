@@ -1,0 +1,91 @@
+import React from 'react'
+import { Card } from '../ui/Card'
+import ScrollColorSection from '../ui/ScrollColorSection'
+import { motion } from 'framer-motion'
+
+const experiences = [
+  {
+    role: 'Graduate Assistant – Campus Recreation',
+    org: 'Stevens Institute of Technology',
+    loc: 'Hoboken, NJ',
+    dates: '09/2024 – Present',
+    impact: 'Optimized campus programming with data-backed scheduling recs.',
+    bullets: [
+      'Analyze participation data from 50+ recreational events to uncover trends that guide scheduling decisions and improve event turnout.',
+      'Manage front desk operations for 200+ daily visitors, maintaining accurate attendance records and structured datasets.',
+      'Provide data-driven insights to support campus recreation planning and resource allocation.'
+    ]
+  },
+  {
+    role: 'Research Assistant – Big Data Analytics & Insights',
+    org: 'Stevens Institute of Technology',
+    loc: 'Hoboken, NJ, USA',
+    dates: '05/2025 – 07/2025',
+    impact: 'Enabled large-scale fairness analysis across micromobility systems.',
+    bullets: [
+      'Built an automated data pipeline with Python and AWS EC2 to accurately process millions of real-time data points from 8 micromobility systems that enabled large-scale transportation fairness analysis',
+      'Applied statistical modeling and geospatial analysis in Python to engineer a quantitative framework that assessed vehicle distribution and identified systemic service inequities across diverse neighborhoods',
+      'Conducted a multivariate Power BI analysis combining geospatial, temporal, and supply metrics, identifying a 30% lower vehicle availability in underserved zones and uncovering peak-time shortages and systemic service gaps'
+    ]
+  },
+  {
+    role: 'Undergraduate Assistant – Inventory & Demand Forecasting',
+    org: 'Terna Engineering College',
+    loc: 'Navi Mumbai, MH, India',
+    dates: '09/2023 – 04/2024',
+    impact: 'Improved supplier accountability and operational insights through automated audits and analysis.',
+    bullets: [
+      'Enhanced supply chain reliability by developing an SQL-based auditing system to monitor 500+ vendor purchase orders, flagging data discrepancies and shipment delays to improve supplier accountability',
+      'Performed Python text analysis on 200+ unstructured notes to extract operational insights and streamline internal workflows',
+      'Executed a market basket analysis on 5000+ transactions to identify purchasing patterns, uncovering 18 significant product associations that drove a strategic redesign of in-store product placement and promotional bundling'
+    ]
+  }
+]
+
+const Experience: React.FC = () => {
+  return (
+    <ScrollColorSection id="experience" className="relative section-wrapper scroll-mt-24 py-12 md:py-16 mx-auto max-w-6xl px-4 md:px-6 mb-24 md:mb-32">
+      <h2 className="section-heading-sticky text-3xl sm:text-5xl font-extrabold text-gradient mb-3">Experience</h2>
+
+      <div className="relative mt-8">
+        <div className="absolute inset-y-0 left-[15px] hidden w-px bg-gradient-to-b from-purple-400/40 via-purple-400/20 to-purple-400/0 md:block" aria-hidden />
+        <ol className="relative space-y-6">
+          {experiences.map((e, i) => (
+            <motion.li key={e.role} initial={{ opacity: 0, x: -16 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.45, delay: i * 0.06 }}>
+              <Card className="relative overflow-hidden pl-10 md:pl-16">
+                <div className="absolute left-4 top-6 hidden h-3 w-3 -translate-x-1/2 rounded-full bg-gradient-to-br from-purple-300 via-violet-400 to-blue-400 shadow-[0_0_16px_rgba(140,120,255,0.65)] md:block" aria-hidden />
+
+                <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                  <div className="flex-1">
+                    <div className="flex flex-col gap-1">
+                      <div className="text-sm font-semibold uppercase tracking-[0.12em] text-purple-200/70">{e.org}</div>
+                      <div className="text-xl font-semibold text-slate-50">{e.role}</div>
+                      <div className="text-sm text-slate-200/80">{e.loc}</div>
+                    </div>
+
+                    <p className="mt-3 text-sm text-purple-200/70">{e.impact}</p>
+
+                    <ul className="mt-4 space-y-3 text-sm text-slate-200/90 leading-relaxed">
+                      {e.bullets.map((b) => (
+                        <li key={b} className="relative pl-4">
+                          <span className="absolute left-0 top-2 h-1.5 w-1.5 rounded-full bg-purple-300/70" aria-hidden />
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="flex flex-none flex-col items-end text-right">
+                    <span className="text-sm text-slate-100/80">{e.dates}</span>
+                  </div>
+                </div>
+              </Card>
+            </motion.li>
+          ))}
+        </ol>
+      </div>
+    </ScrollColorSection>
+  )
+}
+
+export default Experience

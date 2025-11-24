@@ -1,0 +1,10 @@
+- [x] Audit section components and identify UX improvements
+- [x] Implement shared SectionHeader component with subtitle support
+- [x] Enhance About section with detailed stats and interaction
+- [x] Refresh Experience section layout for better timeline UX
+- [x] Upgrade Projects, Skills, Education, Contact sections with richer microcopy and feedback
+- [x] Verify UI changes via tests or lint if applicable
+- [ ] Restore About section to prior simple layout
+- [ ] Restore Skills section to prior simple layout
+- [ ] Align Skills tests with reverted layout
+- [ ] Run test suite
