@@ -5,6 +5,18 @@ import { motion } from 'framer-motion'
 
 const experiences = [
   {
+    role: 'Graduate Yielding Assistant',
+    org: 'Graduate Admissions, Stevens Institute of Technology',
+    loc: 'On-site',
+    dates: '10/2025 – 11/2025',
+    impact: 'Improved onboarding efficiency and cross-department coordination for incoming graduate students.',
+    bullets: [
+      'Improved onboarding efficiency for 100+ incoming graduate students by serving as their primary contact for questions on housing, orientation, and financial aid; escalated complex cases to the correct departments, reducing follow-up volume and ensuring faster resolution.',
+      'Strengthened student support workflows by documenting detailed call notes in Excel and uploading structured insights into Slate, enabling Graduate Admissions to identify recurring concerns and streamline cross-department communication.',
+      'Enhanced student confidence and engagement through daily outreach calls, providing clear guidance, resolving concerns with empathy, and helping incoming students transition smoothly into their graduate programs.'
+    ]
+  },
+  {
     role: 'Graduate Assistant – Campus Recreation',
     org: 'Stevens Institute of Technology',
     loc: 'Hoboken, NJ',
