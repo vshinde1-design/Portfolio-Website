@@ -76,7 +76,7 @@ const Navbar: React.FC = () => {
           VS
         </button>
 
-        <nav className="hidden md:flex gap-2 items-center text-sm font-semibold tracking-[0.12em] text-slate-100/80 uppercase">
+        <nav className="hidden md:flex gap-1 items-center text-xs font-semibold tracking-[0.12em] text-slate-100/80 uppercase">
           {sections.map(({ id, label, offset }) => (
             <ScrollLink
               key={id}
@@ -84,7 +84,7 @@ const Navbar: React.FC = () => {
               smooth={true}
               offset={offset}
               className={clsx(
-                'px-3 py-1 rounded-md transition-all duration-200 cursor-pointer antialiased text-sm',
+                'px-2 py-0.5 rounded-md transition-all duration-200 cursor-pointer antialiased text-xs',
                 activeSection === id
                   ? 'text-white bg-white/6 shadow-[0_6px_24px_rgba(99,102,241,0.06)]'
                   : 'text-slate-200/70 hover:text-white hover:underline hover:decoration-indigo-400/60 hover:underline-offset-4'
@@ -98,7 +98,7 @@ const Navbar: React.FC = () => {
         <div className="flex items-center gap-3">
           <div className="hidden md:block">
               <ScrollLink to="contact" smooth={true} offset={-100}>
-              <Button className="px-3 py-1.5 text-sm font-semibold tracking-[0.12em] bg-white/6 text-white border border-white/10 hover:bg-white/12 shadow-sm">Connect</Button>
+              <Button className="px-2 py-1 text-xs font-semibold tracking-[0.12em] bg-white/6 text-white border border-white/10 hover:bg-white/12 shadow-sm">Connect</Button>
             </ScrollLink>
           </div>
 
@@ -116,14 +116,14 @@ const Navbar: React.FC = () => {
 
       {menuOpen && (
           <div className="md:hidden border-t border-white/10 bg-[rgba(5,4,12,0.95)] backdrop-blur-xl">
-          <div className="container flex flex-col py-6 gap-4 text-base font-medium antialiased font-sans text-white/80">
+          <div className="container flex flex-col py-6 gap-4 text-sm font-medium antialiased font-sans text-white/80">
             {sections.map(({ id, label, offset }) => (
               <ScrollLink
                 key={id}
                 to={id}
                 smooth={true}
                 offset={offset}
-                className="px-2 py-2 rounded-lg hover:bg-white/10 tracking-[0.06em] font-medium text-sm"
+                className="px-2 py-2 rounded-lg hover:bg-white/10 tracking-[0.06em] font-medium text-xs"
                 onClick={() => setMenuOpen(false)}
               >
                 {label}
