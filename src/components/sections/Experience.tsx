@@ -66,16 +66,17 @@ const Experience: React.FC = () => {
             <motion.li key={e.role} initial={{ opacity: 0, x: -16 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.45, delay: i * 0.06 }}>
               <Card className="relative overflow-hidden pl-10 md:pl-16">
                 <div className="absolute left-4 top-6 hidden h-3 w-3 -translate-x-1/2 rounded-full bg-gradient-to-br from-purple-300 via-violet-400 to-blue-400 shadow-[0_0_16px_rgba(140,120,255,0.65)] md:block" aria-hidden />
-                {/* glass pill that appears when the card scrolls into view (visible on md+) */}
+
+                {/* Glass pill that appears when the card scrolls into view */}
                 <motion.div
-                  className="hidden md:flex absolute right-4 top-4 items-center gap-2 rounded-full bg-white/6 backdrop-blur-md px-3 py-1 text-xs font-semibold text-white/90 shadow-sm"
-                  initial={{ opacity: 0, y: -8 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-20%' }}
-                  transition={{ duration: 0.32, ease: 'easeOut' }}
                   aria-hidden
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.35, delay: i * 0.06 + 0.08 }}
+                  className="absolute right-4 top-4 hidden rounded-full px-3 py-1 text-[11px] font-semibold bg-white/6 backdrop-blur-md border border-white/10 text-white shadow-sm md:block"
                 >
-                  <span className="whitespace-nowrap">{e.dates}</span>
+                  {e.dates}
                 </motion.div>
 
                 <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
