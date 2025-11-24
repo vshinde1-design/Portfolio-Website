@@ -76,7 +76,7 @@ const Navbar: React.FC = () => {
           VS
         </button>
 
-        <nav className="hidden md:flex gap-1 items-center text-lg font-medium tracking-[0.02em] text-slate-100/80">
+        <nav className="hidden md:flex gap-2 items-center text-sm font-semibold tracking-[0.12em] text-slate-100/80 uppercase">
           {sections.map(({ id, label, offset }) => (
             <ScrollLink
               key={id}
@@ -84,10 +84,10 @@ const Navbar: React.FC = () => {
               smooth={true}
               offset={offset}
               className={clsx(
-                'px-3 py-2 rounded-full transition-colors duration-200 cursor-pointer antialiased',
+                'px-3 py-1 rounded-md transition-all duration-200 cursor-pointer antialiased text-sm',
                 activeSection === id
-                  ? 'text-white bg-white/10 shadow-[0_8px_30px_rgba(124,58,237,0.25)]'
-                  : 'hover:text-white'
+                  ? 'text-white bg-white/6 shadow-[0_6px_24px_rgba(99,102,241,0.06)]'
+                  : 'text-slate-200/70 hover:text-white hover:underline hover:decoration-indigo-400/60 hover:underline-offset-4'
               )}
             >
               {label}
@@ -98,7 +98,7 @@ const Navbar: React.FC = () => {
         <div className="flex items-center gap-3">
           <div className="hidden md:block">
               <ScrollLink to="contact" smooth={true} offset={-100}>
-              <Button className="px-4 py-2 text-lg font-medium tracking-[0.02em] bg-white/10 text-white border border-white/20 hover:bg-white/20">Connect</Button>
+              <Button className="px-3 py-1.5 text-sm font-semibold tracking-[0.12em] bg-white/6 text-white border border-white/10 hover:bg-white/12 shadow-sm">Connect</Button>
             </ScrollLink>
           </div>
 
@@ -115,15 +115,15 @@ const Navbar: React.FC = () => {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden border-t border-white/10 bg-[rgba(5,4,12,0.95)] backdrop-blur-xl">
-          <div className="container flex flex-col py-6 gap-4 text-lg font-medium antialiased font-sans text-white/80">
+          <div className="md:hidden border-t border-white/10 bg-[rgba(5,4,12,0.95)] backdrop-blur-xl">
+          <div className="container flex flex-col py-6 gap-4 text-base font-medium antialiased font-sans text-white/80">
             {sections.map(({ id, label, offset }) => (
               <ScrollLink
                 key={id}
                 to={id}
                 smooth={true}
                 offset={offset}
-                className="px-2 py-2 rounded-lg hover:bg-white/10 tracking-[0.02em] font-medium"
+                className="px-2 py-2 rounded-lg hover:bg-white/10 tracking-[0.06em] font-medium text-sm"
                 onClick={() => setMenuOpen(false)}
               >
                 {label}
