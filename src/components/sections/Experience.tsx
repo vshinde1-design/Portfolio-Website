@@ -11,9 +11,9 @@ const experiences = [
     dates: '11/2025 – Present',
     impact: 'Built reproducible pipelines and multi-city visualization frameworks to accelerate fairness audits across micromobility systems.',
     bullets: [
-      'Engineered Python-based fairness visuals—drift indicators, demand–supply mismatch maps, and infrastructure-to-usage overlays—to identify neighborhood-level micromobility service inequities.',
-      'Architected a multi-city visualization framework that standardizes decile ranks, peak/off-peak heatmaps, and fairness timeseries, enabling consistent equity analysis across 12 cities and multi-day datasets.',
-      'Automated a reproducible Python pipeline that generates 15+ usage, availability, idle-time, and accessibility visuals per city, reducing manual work by 80% and accelerating fairness audits.'
+      'Design Python-based fairness visuals using drift indicators, demand–supply mismatch maps, and infrastructure-to-usage overlays to reveal neighborhood-level micromobility service inequities.',
+      'Standardize decile ranks, peak and off-peak heatmaps, and fairness time series within a multi-city visualization framework that enables consistent equity analysis across 12 cities and multi-day datasets.',
+      'Automate a reproducible Python workflow that generates 15+ usage, availability, idle-time, and accessibility visuals per city to support scalable fairness diagnostics.'
     ]
   },
   {
