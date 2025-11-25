@@ -185,7 +185,7 @@ const Hero: React.FC = () => {
             <ScrollLink to="contact" smooth={true} offset={-80}>
               <Button variant="primary" className="group transform-gpu hover:scale-[1.02] transition-transform duration-200">Get in Touch</Button>
             </ScrollLink>
-            <a href="/Vedant_Shinde_CV.pdf" target="_blank" rel="noreferrer">
+            <a href="/certs/VedantShinde%20Resume.pdf" target="_blank" rel="noreferrer">
               <Button variant="outline" className="group hover:shadow-[0_8px_30px_rgba(99,102,241,0.14)] transition-shadow duration-220">
                 <span className="flex items-center gap-3">
                   <span>Download CV</span>
