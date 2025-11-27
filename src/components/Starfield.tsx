@@ -20,7 +20,7 @@ type Star = {
 export default function Starfield({
   className = '',
   desktopCount = 150,
-  mobileCount = 40,
+  mobileCount = 12,
   layers = 3,
   parallax = true,
   parallaxStrength = 0.004,
@@ -46,11 +46,13 @@ export default function Starfield({
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
+    // cap DPR on mobile to save pixels and memory
     let dpr = Math.max(1, window.devicePixelRatio || 1)
 
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     const isMobile = /Mobi|Android/i.test(navigator.userAgent)
     const STAR_COUNT = isMobile ? mobileCount : desktopCount
+    const effectiveParallax = parallax && !isMobile
 
     let stars: Star[] = []
     let morph = 0 // 0..1 morph progress towards heart
@@ -58,6 +60,7 @@ export default function Starfield({
 
     function resize() {
       dpr = Math.max(1, window.devicePixelRatio || 1)
+      if (isMobile) dpr = Math.min(dpr, 1.5)
       const width = canvas.clientWidth
       const height = canvas.clientHeight
       canvas.width = Math.floor(width * dpr)
@@ -146,8 +149,8 @@ export default function Starfield({
         const s = stars[idx]
         const tw = Math.sin(time * s.twinkleSpeed + s.twinklePhase) * 0.25 + 0.75
         const alpha = s.alpha * tw
-        const px = parallax ? (pointerRef.current.x - width / 2) * (parallaxStrength * (s.layer + 1)) : 0
-        const py = parallax ? (pointerRef.current.y - height / 2) * (parallaxStrength * (s.layer + 1)) : 0
+        const px = effectiveParallax ? (pointerRef.current.x - width / 2) * (parallaxStrength * (s.layer + 1)) : 0
+        const py = effectiveParallax ? (pointerRef.current.y - height / 2) * (parallaxStrength * (s.layer + 1)) : 0
 
         let drawX = s.x
         let drawY = s.y
@@ -163,14 +166,22 @@ export default function Starfield({
         const x = drawX + px
         const y = drawY + py
 
-        ctx.beginPath()
-        const grd = ctx.createRadialGradient(x, y, 0, x, y, Math.max(1, s.r * 6))
-        grd.addColorStop(0, s.color)
-        grd.addColorStop(0.6, s.color)
-        grd.addColorStop(1, 'rgba(255,255,255,0)')
-        ctx.fillStyle = grd
-        ctx.globalAlpha = Math.min(1, alpha)
-        ctx.fillRect(x - s.r * 6, y - s.r * 6, s.r * 12, s.r * 12)
+        if (isMobile) {
+          // cheaper draw for mobile: simple filled circle/rect
+          ctx.fillStyle = s.color
+          ctx.globalAlpha = Math.min(1, alpha * (0.9))
+          const size = Math.max(1, s.r * 2)
+          ctx.fillRect(x - size / 2, y - size / 2, size, size)
+        } else {
+          ctx.beginPath()
+          const grd = ctx.createRadialGradient(x, y, 0, x, y, Math.max(1, s.r * 6))
+          grd.addColorStop(0, s.color)
+          grd.addColorStop(0.6, s.color)
+          grd.addColorStop(1, 'rgba(255,255,255,0)')
+          ctx.fillStyle = grd
+          ctx.globalAlpha = Math.min(1, alpha)
+          ctx.fillRect(x - s.r * 6, y - s.r * 6, s.r * 12, s.r * 12)
+        }
 
         if (morph < 1) {
           s.x += s.vx * (s.layer + 1)
@@ -189,9 +200,16 @@ export default function Starfield({
       ctx.globalCompositeOperation = 'source-over'
     }
 
-    function animate() {
+    // throttle frames on mobile to reduce CPU/battery use
+    const frameInterval = isMobile ? (1000 / 30) : (1000 / 60)
+    let lastFrameTime = 0
+    function animate(now?: number) {
       if (prefersReduced) return
-      draw()
+      const t = now ?? performance.now()
+      if (t - lastFrameTime >= frameInterval) {
+        draw()
+        lastFrameTime = t
+      }
       rafRef.current = requestAnimationFrame(animate)
     }
 
@@ -203,7 +221,8 @@ export default function Starfield({
     resize()
     window.addEventListener('resize', resize, { passive: true })
     if (!prefersReduced) {
-      window.addEventListener('pointermove', onPointer, { passive: true })
+      // don't attach pointermove on mobile to avoid high-frequency events
+      if (!isMobile) window.addEventListener('pointermove', onPointer, { passive: true })
       animate()
     }
 
