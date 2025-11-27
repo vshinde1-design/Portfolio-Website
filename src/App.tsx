@@ -10,6 +10,7 @@ import Skills from './components/sections/Skills'
 import { EducationSection, CertificationsSection } from './components/sections/Education'
 import Contact from './components/sections/Contact'
 import UnifiedAnalyticsBackground from './components/UnifiedAnalyticsBackground'
+import Starfield from './components/Starfield'
 
 export default function App() {
   useEffect(() => {
@@ -76,6 +77,7 @@ export default function App() {
     <ThemeProvider>
       {/* Outer wrapper per request */}
       <div className="relative min-h-screen bg-[#1a0b33] overflow-hidden">
+        <Starfield />
         {/* Page content above the animation */}
         <main className="relative">
           <Navbar />
