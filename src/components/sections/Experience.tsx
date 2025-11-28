@@ -9,11 +9,11 @@ const experiences = [
     org: 'Stevens Institute of Technology',
     loc: 'Hoboken, NJ, USA',
     dates: '11/2025 – Present',
-    impact: 'Built reproducible pipelines and multi-city visualization frameworks to accelerate fairness audits across micromobility systems.',
+    impact: 'Created scalable analytics and visualization tooling to support cross-city fairness assessments for micromobility systems.',
     bullets: [
-      'Design Python-based fairness visuals using drift indicators, demand–supply mismatch maps, and infrastructure-to-usage overlays to reveal neighborhood-level micromobility service inequities.',
-      'Standardize decile ranks, peak and off-peak heatmaps, and fairness time series within a multi-city visualization framework that enables consistent equity analysis across 12 cities and multi-day datasets.',
-      'Automate a reproducible Python workflow that generates 15+ usage, availability, idle-time, and accessibility visuals per city to support scalable fairness diagnostics.'
+      'Create a multi-city analytics architecture that standardizes fairness metrics, decile ranks, and peak/off-peak service patterns across 12+ cities, enabling faster cross-region comparisons and more consistent decision-making for transportation planners',
+      'Produce Python-driven visuals—including drift indicators, mismatch maps, and infrastructure-to-usage overlays—that uncover localized service gaps, empowering stakeholders to prioritize deployment and reduce underserved-zone complaints',
+      'Streamline operational reporting by building an automated workflow that generates 15+ geospatial and supply–demand visuals per city, cutting manual analysis time and supporting rapid iteration during policy reviews'
     ]
   },
   {
@@ -41,27 +41,27 @@ const experiences = [
     ]
   },
   {
-    role: 'Research Assistant – Big Data Analytics & Insights',
+    role: 'Summer Research Assistant – Big Data Analytics',
     org: 'Stevens Institute of Technology',
     loc: 'Hoboken, NJ, USA',
-    dates: '05/2025 – 07/2025',
-    impact: 'Enabled large-scale fairness analysis across micromobility systems.',
+    dates: 'May 2025 – Jul 2025',
+    impact: 'Built core data engineering and modeling pipelines to enable reliable, large-scale mobility analytics.',
     bullets: [
-      'Built an automated data pipeline with Python and AWS EC2 to accurately process millions of real-time data points from 8 micromobility systems that enabled large-scale transportation fairness analysis',
-      'Applied statistical modeling and geospatial analysis in Python to engineer a quantitative framework that assessed vehicle distribution and identified systemic service inequities across diverse neighborhoods',
-      'Conducted a multivariate Power BI analysis combining geospatial, temporal, and supply metrics, identifying a 30% lower vehicle availability in underserved zones and uncovering peak-time shortages and systemic service gaps'
+      'Constructed a large-scale ETL pipeline (Python + AWS EC2) to ingest and clean millions of real-time mobility records from 8 systems, improving data reliability and enabling teams to run downstream analytics without pipeline failures.',
+      'Engineered geospatial and statistical models that exposed 30% lower vehicle availability in disadvantaged neighborhoods, giving leadership a measurable basis for rebalancing fleet allocation and reducing wait times.',
+      'Synthesized temporal, supply, and demand KPIs into dynamic Power BI dashboards that highlighted peak-hour shortages, helping resource teams plan capacity improvements tied directly to predicted rider spikes.'
     ]
   },
   {
-    role: 'Undergraduate Assistant – Inventory & Demand Forecasting',
+    role: 'Undergraduate Data Analyst – Inventory & Demand Forecasting',
     org: 'Terna Engineering College',
     loc: 'Navi Mumbai, MH, India',
-    dates: '09/2023 – 04/2024',
-    impact: 'Improved supplier accountability and operational insights through automated audits and analysis.',
+    dates: 'Sep 2023 – Apr 2024',
+    impact: 'Implemented operational analytics and audit tooling to improve inventory reliability and surface product insights.',
     bullets: [
-      'Enhanced supply chain reliability by developing an SQL-based auditing system to monitor 500+ vendor purchase orders, flagging data discrepancies and shipment delays to improve supplier accountability',
-      'Performed Python text analysis on 200+ unstructured notes to extract operational insights and streamline internal workflows',
-      'Executed a market basket analysis on 5000+ transactions to identify purchasing patterns, uncovering 18 significant product associations that drove a strategic redesign of in-store product placement and promotional bundling'
+      'Implemented an SQL-driven auditing system tracking 500+ vendor purchase orders, flagging discrepancies and reducing supplier-related delay escalations by giving procurement clear visibility into order reliability.',
+      'Extracted workflow bottlenecks by analyzing 200+ unstructured operational notes, guiding department leads to revise processes and reduce recurring service interruptions.',
+      'Identified 18 high-value product affinity patterns from 5,000+ transactions, informing a new store-layout strategy that increased bundle opportunities and improved promotional targeting.'
     ]
   }
 ]

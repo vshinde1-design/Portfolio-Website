@@ -18,32 +18,30 @@ type Project = {
 
 const projects: Project[] = [
   {
-    name: 'Industry Capstone Project - AI-driven Personalization Strategy for The Webster',
-    desc: 'Engineered a custom GPT-style fashion recommender integrating a 25,000-product catalog with LLM-driven outfit generation for context-aware suggestions.',
+    name: 'AI-Driven Personalization Engine (The Webster)',
+    desc: 'Developed a GPT-style fashion recommender trained on a 25,000-product dataset, generating contextual outfits based on style, budget, and occasion.',
     tech: ['Python', 'LLMs', 'Product Embeddings', 'Vector Search'],
     media: '/certs/Industry Capstone/Industry Capstone_GPT_Photo Visualization.mp4',
     category: 'AI & ML',
-    impact: 'Improved personalized outfit relevance and coherence by prioritizing influencer-aligned items and style-aware rankings.',
+    impact: 'Scaled contextual outfit generation and improved product-match relevance for conversion-driven recommendations.',
     metrics: '25,000 products · 08/2025–Present',
     details: [
-      'Engineered a custom GPT-style fashion recommender by integrating a 25,000-product CSV dataset with LLM-driven outfit generation, enabling context-aware suggestions based on occasion, budget, and user style preferences.',
-      'Built an influencer-style weighting system by analyzing the aesthetic patterns of 15–20 real influencers, tagging products with color/style vectors, which increased personalized outfit relevance by prioritizing stylistically aligned items.',
-      'Enhanced product ranking accuracy by creating “style-vein” metadata across the catalog, allowing the AI to score items on influencer alignment and user intent—resulting in more coherent, full-look recommendations.'
+      'Developed a GPT-style fashion recommender trained on a 25,000-product dataset, generating contextual outfits based on style, budget, and occasion—helping retail teams scale personalized styling without additional human labor.',
+      'Formulated a style-weighting system using influencer aesthetic profiles, improving product-match relevance and enabling more engaging, conversion-driven recommendations for shoppers on the platform.'
     ]
   },
   {
-    name: 'Grocerly — AI Grocery Assistant',
-    desc: 'Developed an AI grocery assistant delivering SKU-aware recipe recommendations, nutrition insights, and cart analytics across a normalized grocery catalog.',
+    name: 'Grocerly – AI Grocery & Retail Assistant',
+    desc: 'Launched an AI grocery assistant capable of SKU-aware recipe planning, price-based substitutions, and nutrition insights across a normalized catalog.',
     tech: ['Node.js', 'React', 'Ollama', 'ETL', 'MySQL'],
     media: '/certs/Grocerly/Screenshot 2025-11-24 104339.png',
     repo: 'https://github.com/Vedantshi/grocery-assistant-chatbot.git',
     category: 'AI & ML',
-    impact: 'Enabled SKU-aware recipe recommendations and inventory-aware substitutions with structured LLM prompting and schema validation.',
+    impact: 'Enabled SKU-aware recipe recommendations and retail-grade ETL for accurate meal costing and inventory-aware substitutions.',
     metrics: '600+ normalized products · 09/2025–11/2025',
     details: [
-      'Developed an AI grocery assistant using Node.js, React UMD, and Ollama, delivering SKU-aware recipe recommendations, nutrition insights, and cart analytics across 600+ normalized grocery products.',
-      'Engineered a retail-grade ETL pipeline for fuzzy ingredient matching, unit normalization, and product enrichment (price, calories, macros) to support accurate meal costing and inventory-aware substitutions.',
-      'Designed production-style structured LLM prompting with schema validation and automatic repair logic, ensuring reliable multistep flows for Budget Planner, Pantry Helper, Nutrition Coach, and Time Saver features.'
+      'Launched an AI grocery assistant using Node.js, React UMD, and Ollama capable of SKU-aware recipe planning, price-based substitutions, and nutrition insights—mirroring functionality used by modern retail personalization tools.',
+      'Orchestrated a retail-grade ETL pipeline for fuzzy ingredient matching, unit standardization, and price/calorie enrichment across 600+ grocery products, supporting accurate meal costing and enabling data-driven promotions, inventory decisions, and upsell opportunities.'
     ]
   },
   {
