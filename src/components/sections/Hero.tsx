@@ -60,30 +60,11 @@ const Hero: React.FC = () => {
   const [activeTitle, setActiveTitle] = useState('Data Analyst')
   const [parallax, setParallax] = useState({ x: 0, y: 0 })
   
-  const handleResumeClick = async (e: React.MouseEvent) => {
+  const handleResumeClick = (e: React.MouseEvent) => {
     e.preventDefault()
     const url = '/certs/VedantShinde%20Resume.pdf'
-    // open preview in a new tab
-    const newWin = window.open(url, '_blank')
-    try {
-      // fetch and trigger download in background
-      const res = await fetch(url)
-      if (!res.ok) throw new Error('Network response was not ok')
-      const blob = await res.blob()
-      const blobUrl = URL.createObjectURL(blob)
-      const a = document.createElement('a')
-      a.href = blobUrl
-      a.download = 'VedantShinde_Resume.pdf'
-      document.body.appendChild(a)
-      a.click()
-      a.remove()
-      URL.revokeObjectURL(blobUrl)
-    } catch (err) {
-      // if download fails, open the PDF preview if not already opened
-      if (!newWin || newWin.closed) window.open(url, '_blank')
-      console.error('Resume download failed', err)
-    }
-    if (newWin) try { newWin.opener = null } catch {}
+    // Open PDF in a new tab for viewing
+    window.open(url, '_blank')
   }
   return (
 
@@ -213,7 +194,7 @@ const Hero: React.FC = () => {
             </ScrollLink>
             <Button variant="outline" className="group hover:shadow-[0_8px_30px_rgba(99,102,241,0.14)] transition-shadow duration-220" onClick={handleResumeClick}>
               <span className="flex items-center gap-3">
-                <span>Download CV</span>
+                <span>View CV</span>
                 <svg className="h-4 w-4 transform transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
                   <path d="M13 5l7 7-7 7M20 12H4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
