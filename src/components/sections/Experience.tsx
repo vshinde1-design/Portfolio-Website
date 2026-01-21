@@ -5,27 +5,27 @@ import { motion } from 'framer-motion'
 
 const experiences = [
   {
-    role: 'Graduate Research Assistant – Data Visualization and Insights',
+    role: 'Graduate Research Assistant - Data Analyst',
     org: 'Stevens Institute of Technology',
     loc: 'Hoboken, NJ, USA',
     dates: '11/2025 – Present',
-    impact: 'Created scalable analytics and visualization tooling to support cross-city fairness assessments for micromobility systems.',
+    impact: 'Enabled faster cross-region decision-making through standardized analytics frameworks covering 12+ cities.',
     bullets: [
-      'Create a multi-city analytics architecture that standardizes fairness metrics, decile ranks, and peak/off-peak service patterns across 12+ cities, enabling faster cross-region comparisons and more consistent decision-making for transportation planners',
-      'Produce Python-driven visuals—including drift indicators, mismatch maps, and infrastructure-to-usage overlays—that uncover localized service gaps, empowering stakeholders to prioritize deployment and reduce underserved-zone complaints',
-      'Streamline operational reporting by building an automated workflow that generates 15+ geospatial and supply–demand visuals per city, cutting manual analysis time and supporting rapid iteration during policy reviews'
+      'Designed a standardized analytics architecture capturing fairness metrics, decile rankings, and peak/off-peak patterns across 12+ cities, enabling consistent comparisons and data-driven deployment prioritization.',
+      'Surfaced actionable equity and service gaps through Python-driven visual analyses—drift indicators, mismatch maps, and infrastructure-to-usage overlays—guiding strategic rebalancing and reducing underserved-zone disparities.',
+      'Automated generation of 15+ geospatial and supply-demand visuals per city, reducing manual analysis overhead and accelerating policy review cycles.'
     ]
   },
   {
-    role: 'Graduate Assistant – Campus Recreation',
+    role: 'Graduate Assistant - Operations Analyst',
     org: 'Stevens Institute of Technology',
     loc: 'Hoboken, NJ, USA',
     dates: '09/2024 – Present',
-    impact: 'Optimized campus programming with data-backed scheduling recs.',
+    impact: 'Increased event turnout through data-driven scheduling and operational optimization.',
     bullets: [
-      'Analyze participation data from 50+ recreational events to uncover trends that guide scheduling decisions and improve event turnout.',
-      'Manage front desk operations for 200+ daily visitors, maintaining accurate attendance records and structured datasets.',
-      'Provide data-driven insights to support campus recreation planning and resource allocation.'
+      'Analyzed participation trends across 15+ recreational events to identify scheduling patterns and optimize turnout-driving decisions.',
+      'Maintained clean operational datasets tracking 200+ daily visitors, ensuring accurate attendance analysis and reporting.',
+      'Provided actionable insights to campus recreation leadership for resource allocation and program planning.'
     ]
   },
   {
@@ -41,27 +41,27 @@ const experiences = [
     ]
   },
   {
-    role: 'Summer Research Assistant – Big Data Analytics',
+    role: 'Summer Research Assistant - Data Engineer & Analyst',
     org: 'Stevens Institute of Technology',
     loc: 'Hoboken, NJ, USA',
-    dates: 'May 2025 – Jul 2025',
-    impact: 'Built core data engineering and modeling pipelines to enable reliable, large-scale mobility analytics.',
+    dates: '05/2025 – 07/2025',
+    impact: 'Stabilized large-scale analytics workflows and identified systemic equity disparities in vehicle availability.',
     bullets: [
-      'Constructed a large-scale ETL pipeline (Python + AWS EC2) to ingest and clean millions of real-time mobility records from 8 systems, improving data reliability and enabling teams to run downstream analytics without pipeline failures.',
-      'Engineered geospatial and statistical models that exposed 30% lower vehicle availability in disadvantaged neighborhoods, giving leadership a measurable basis for rebalancing fleet allocation and reducing wait times.',
-      'Synthesized temporal, supply, and demand KPIs into dynamic Power BI dashboards that highlighted peak-hour shortages, helping resource teams plan capacity improvements tied directly to predicted rider spikes.'
+      'Built a Python- and AWS-based ETL pipeline ingesting and cleaning millions of real-time mobility records across 8 systems, improving data reliability for downstream analysis.',
+      'Identified 30% lower vehicle access in disadvantaged neighborhoods through geospatial and statistical analysis, supporting data-driven fleet rebalancing decisions.',
+      'Consolidated temporal, supply, and demand KPIs into dynamic Power BI dashboards surfacing peak-hour shortages and enabling proactive capacity planning.'
     ]
   },
   {
-    role: 'Undergraduate Data Analyst – Inventory & Demand Forecasting',
+    role: 'Undergraduate Assistant - Supply Chain Analyst',
     org: 'Terna Engineering College',
     loc: 'Navi Mumbai, MH, India',
-    dates: 'Sep 2023 – Apr 2024',
-    impact: 'Implemented operational analytics and audit tooling to improve inventory reliability and surface product insights.',
+    dates: '09/2023 – 04/2024',
+    impact: 'Reduced supplier delays and uncovered product affinity patterns driving merchandising strategy.',
     bullets: [
-      'Implemented an SQL-driven auditing system tracking 500+ vendor purchase orders, flagging discrepancies and reducing supplier-related delay escalations by giving procurement clear visibility into order reliability.',
-      'Extracted workflow bottlenecks by analyzing 200+ unstructured operational notes, guiding department leads to revise processes and reduce recurring service interruptions.',
-      'Identified 18 high-value product affinity patterns from 5,000+ transactions, informing a new store-layout strategy that increased bundle opportunities and improved promotional targeting.'
+      'Implemented an SQL-driven auditing system tracking 500+ vendor purchase orders, reducing supplier delay escalations through improved visibility into order reliability.',
+      'Analyzed 200+ unstructured workflow records to identify operational bottlenecks, streamlining the procurement lifecycle.',
+      'Uncovered 18 high-value product affinity patterns from 5,000+ transactions, informing store-layout optimization and bundle strategy.'
     ]
   }
 ]
