@@ -19,15 +19,15 @@ type Project = {
 const projects: Project[] = [
   {
     name: 'AI-Driven Personalization Engine (The Webster)',
-    desc: 'Developed a GPT-style fashion recommender trained on a 25,000-product dataset, generating contextual outfits based on style, budget, and occasion.',
+    desc: 'Led a team of six analysts to build a Python-based recommendation engine using 25,000+ structured product attributes, improving outfit ranking relevance and enhancing personalized product discovery for users.',
     tech: ['Python', 'LLMs', 'Product Embeddings', 'Vector Search'],
     media: '/certs/Industry Capstone/Industry Capstone_GPT_Photo Visualization.mp4',
     category: 'AI & ML',
     impact: 'Scaled contextual outfit generation and improved product-match relevance for conversion-driven recommendations.',
     metrics: '25,000 products · 08/2025–Present',
     details: [
-      'Developed a GPT-style fashion recommender trained on a 25,000-product dataset, generating contextual outfits based on style, budget, and occasion—helping retail teams scale personalized styling without additional human labor.',
-      'Formulated a style-weighting system using influencer aesthetic profiles, improving product-match relevance and enabling more engaging, conversion-driven recommendations for shoppers on the platform.'
+      'Led a team of six analysts to build a Python-based recommendation engine using 25,000+ structured product attributes, improving outfit ranking relevance and enhancing personalized product discovery for users.',
+      'Reduced manual product validation effort by 30% by analyzing API response data and implementing Excel-based validation frameworks to detect inconsistent URLs and incomplete product metadata.'
     ]
   },
   {

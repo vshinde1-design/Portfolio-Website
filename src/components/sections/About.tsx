@@ -28,7 +28,6 @@ const About: React.FC = () => {
               }}
               aria-hidden
             />
-
             <div className="relative z-10 rounded-[26px] border border-white/10 glass-card p-4 shadow-[0_20px_80px_rgba(9,5,24,0.65)] transition-transform duration-300 group-hover:scale-105">
               <img src="/certs/VedantShinde0939.jpg" alt="Portrait of Vedant Shinde" className="w-full rounded-[18px] object-cover" />
             </div>
@@ -38,9 +37,9 @@ const About: React.FC = () => {
         <div className="space-y-6 text-slate-100">
 
           {[
-            <p key="p1" className="mt-4 text-[1.125rem] leading-7 text-slate-100/90">I am a detail-oriented and analytical Master's candidate in Information Systems with a strong foundation in <span className="text-indigo-300"> data analytics, machine learning, and data visualization.</span> <span className="inline-block rounded-full bg-white/10 px-3 py-1 mx-2 text-xs font-semibold text-white/90 border border-white/15">Microsoft Power BI Data Analyst Associate (PL-300)</span> I transform complex data into actionable insights that drive strategic decisions and operational excellence.</p>,
-            <p key="p2" className="mt-4 text-[1.125rem] leading-7 text-slate-100/90">With advanced proficiency in <span className="text-indigo-300">Python and SQL</span>, I specialize in demand forecasting, inventory optimization, and building machine learning models that enhance operational agility. My expertise extends to designing intuitive BI dashboards that illuminate KPIs and empower data-driven strategies.</p>,
-            <p key="p3" className="mt-4 text-[1.125rem] leading-7 text-slate-100/90">I thrive in collaborative environments, working seamlessly with cross-functional teams to achieve project goals. Whether leading research initiatives or contributing to team efforts, I approach every challenge with clarity, focus, and a commitment to excellence.</p>,
+            <p key="p1" className="mt-4 text-[1.125rem] leading-7 text-slate-100/90">I am a Master’s candidate in Information Systems with 2+ years of experience using data to solve operational and business problems across transportation, retail, and facilities environments. I work comfortably with large, unstructured datasets and focus on building analytical workflows that translate raw data into decisions.</p>,
+            <p key="p2" className="mt-4 text-[1.125rem] leading-7 text-slate-100/90">My experience includes developing Python and SQL pipelines, designing Power BI dashboards for KPI tracking, and applying forecasting and statistical analysis to understand demand patterns, service gaps, and performance trends. I am particularly interested in roles where analytics directly improves efficiency, planning, and customer experience.</p>,
+            <p key="p3" className="mt-4 text-[1.125rem] leading-7 text-slate-100/90">I am naturally curious, structured in my approach, and motivated by measurable outcomes. I enjoy working in fast-moving environments where data is incomplete, questions are evolving, and insights need to be practical and actionable.</p>,
             <div key="badges" className="flex flex-wrap gap-2">{highlightedSkills.map((skill) => (<Badge key={skill}>{skill}</Badge>))}</div>
           ].map((el, i) => (
             <motion.div

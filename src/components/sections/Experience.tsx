@@ -5,27 +5,26 @@ import { motion } from 'framer-motion'
 
 const experiences = [
   {
-    role: 'Graduate Research Assistant - Data Analyst',
+    role: 'Research Data Analyst',
     org: 'Stevens Institute of Technology',
     loc: 'Hoboken, NJ, USA',
     dates: '11/2025 – Present',
     impact: 'Enabled faster cross-region decision-making through standardized analytics frameworks covering 12+ cities.',
     bullets: [
-      'Designed a standardized analytics architecture capturing fairness metrics, decile rankings, and peak/off-peak patterns across 12+ cities, enabling consistent comparisons and data-driven deployment prioritization.',
-      'Surfaced actionable equity and service gaps through Python-driven visual analyses—drift indicators, mismatch maps, and infrastructure-to-usage overlays—guiding strategic rebalancing and reducing underserved-zone disparities.',
-      'Automated generation of 15+ geospatial and supply-demand visuals per city, reducing manual analysis overhead and accelerating policy review cycles.'
+      'Standardized mobility datasets from 12+ cities using Python (Pandas, NumPy, GeoPandas), achieving an estimated 20% reduction in data inconsistencies and 25-30% faster processing.',
+      'Evaluated neighborhood-level supply–demand equity across 200+ census tracts using Gini and Alpha fairness metrics, enabling researchers to prioritize underserved regions for transportation policy recommendations.',
+      'Reduced manual reporting workload by 45% by developing reusable analytics scripts and automated Power BI dashboards that streamlined recurring research deliverables and stakeholder presentations.'
     ]
   },
   {
-    role: 'Graduate Assistant - Operations Analyst',
+    role: 'Campus Recreation Assistant',
     org: 'Stevens Institute of Technology',
     loc: 'Hoboken, NJ, USA',
     dates: '09/2024 – Present',
     impact: 'Increased event turnout through data-driven scheduling and operational optimization.',
     bullets: [
-      'Analyzed participation trends across 15+ recreational events to identify scheduling patterns and optimize turnout-driving decisions.',
-      'Maintained clean operational datasets tracking 200+ daily visitors, ensuring accurate attendance analysis and reporting.',
-      'Provided actionable insights to campus recreation leadership for resource allocation and program planning.'
+      'Forecasted participation trends across 15+ recreational programs using rolling average models in Excel, supporting data-informed staffing allocation and equipment scheduling decisions.',
+      'Structured checkout and usage datasets using PivotTables and validation rules, improving inventory visibility and enabling more efficient resource planning for facilities serving 200+ daily visitors.'
     ]
   },
   {
@@ -41,27 +40,27 @@ const experiences = [
     ]
   },
   {
-    role: 'Summer Research Assistant - Data Engineer & Analyst',
+    role: 'Research Data Analyst (Summer Fellow)',
     org: 'Stevens Institute of Technology',
     loc: 'Hoboken, NJ, USA',
     dates: '05/2025 – 07/2025',
     impact: 'Stabilized large-scale analytics workflows and identified systemic equity disparities in vehicle availability.',
     bullets: [
-      'Built a Python- and AWS-based ETL pipeline ingesting and cleaning millions of real-time mobility records across 8 systems, improving data reliability for downstream analysis.',
-      'Identified 30% lower vehicle access in disadvantaged neighborhoods through geospatial and statistical analysis, supporting data-driven fleet rebalancing decisions.',
-      'Consolidated temporal, supply, and demand KPIs into dynamic Power BI dashboards surfacing peak-hour shortages and enabling proactive capacity planning.'
+      'Designed and implemented a Python and AWS data pipeline consolidating mobility records from 8 transportation systems into a centralized research dataset, processing millions of records.',
+      'Pinpointed critical service gaps across 9 urban neighborhoods by analyzing demographic and transit usage datasets, directly informing research on transportation equity and operational distribution strategies for improved accessibility.',
+      'Designed user-friendly Power BI dashboards, which helped analysts to identify three biggest causes of transit delays across different geographical locations, supporting data-driven decisions for infrastructure projects.'
     ]
   },
   {
-    role: 'Undergraduate Assistant - Supply Chain Analyst',
+    role: 'Student Data Analyst',
     org: 'Terna Engineering College',
     loc: 'Navi Mumbai, MH, India',
-    dates: '09/2023 – 04/2024',
+    dates: '02/2023 – 04/2024',
     impact: 'Reduced supplier delays and uncovered product affinity patterns driving merchandising strategy.',
     bullets: [
-      'Implemented an SQL-driven auditing system tracking 500+ vendor purchase orders, reducing supplier delay escalations through improved visibility into order reliability.',
-      'Analyzed 200+ unstructured workflow records to identify operational bottlenecks, streamlining the procurement lifecycle.',
-      'Uncovered 18 high-value product affinity patterns from 5,000+ transactions, informing store-layout optimization and bundle strategy.'
+      'Analyzed 6,000+ bookstore transactions across 300+ SKUs using SQL queries to identify seasonal demand patterns and slow-moving inventory trends influencing procurement and restocking strategies.',
+      'Built Power BI dashboards tracking supplier fulfillment performance, demand fluctuations, and inventory turnover KPIs, reducing manual report preparation time by approximately 40%.',
+      'Generated semester-level demand forecasts using moving average models in Python and Excel, improving inventory allocation planning and reducing stock shortages during peak demand periods by an estimated 15%.'
     ]
   }
 ]
