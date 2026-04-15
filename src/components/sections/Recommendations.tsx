@@ -44,7 +44,7 @@ const Recommendations: React.FC = () => {
     <ScrollColorSection id="recommendations" className="relative section-wrapper scroll-mt-24 py-12 md:py-16 mx-auto max-w-6xl px-4 md:px-6">
       <h2 className="section-heading-sticky text-3xl sm:text-5xl font-extrabold text-gradient mb-8">Recommendations</h2>
 
-      <div className="relative z-10 flex flex-col gap-6 items-center">
+      <div className="relative z-10 flex flex-col gap-6">
         {recommendations.map((rec, idx) => (
           <motion.div
             key={rec.name}
@@ -53,7 +53,6 @@ const Recommendations: React.FC = () => {
             viewport={{ once: true, amount: 0.18 }}
             transition={prefersReduced ? undefined : { duration: 0.55, delay: idx * 0.12, ease: [0.2, 0.8, 0.2, 1] }}
             whileHover={{ y: -4 }}
-            className="w-full max-w-2xl"
           >
             <Card className="p-6 md:p-8">
               {/* Quote section */}
