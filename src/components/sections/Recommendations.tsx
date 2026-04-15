@@ -11,7 +11,7 @@ const recommendations = [
     institution: 'Stevens Institute of Technology',
     relation: 'Research Mentor, Summer 2025',
     linkedIn: true,
-    photo: '/certs/prof_image'
+    photo: '/certs/prof_image.jpg'
   }
 ]
 
