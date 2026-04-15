@@ -9,7 +9,7 @@ const recommendations = [
     name: 'Dr. Violet Chen',
     title: 'Assistant Professor, Analytics and Information Systems',
     institution: 'Stevens Institute of Technology',
-    relation: 'Research Mentor, Summer 2025',
+    relation: 'Research Mentor',
     linkedIn: true,
     photo: '/certs/prof_image.jpg'
   }
