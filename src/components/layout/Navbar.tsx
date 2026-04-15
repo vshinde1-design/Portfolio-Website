@@ -9,6 +9,7 @@ const sections = [
   { id: 'skills', label: 'Skills', offset: -100 },
   { id: 'education', label: 'Education', offset: -100 },
   { id: 'certifications', label: 'Certifications', offset: -100 },
+  { id: 'recommendations', label: 'Recommendations', offset: -100 },
   { id: 'contact', label: 'Contact', offset: -100 }
 ]
 

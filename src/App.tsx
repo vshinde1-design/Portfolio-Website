@@ -8,6 +8,7 @@ import Experience from './components/sections/Experience'
 import Projects from './components/sections/Projects'
 import Skills from './components/sections/Skills'
 import { EducationSection, CertificationsSection } from './components/sections/Education'
+import Recommendations from './components/sections/Recommendations'
 import Contact from './components/sections/Contact'
 import UnifiedAnalyticsBackground from './components/UnifiedAnalyticsBackground'
 import Starfield from './components/Starfield'
@@ -108,6 +109,10 @@ export default function App() {
 
               <div className="section-wrapper">
                 <CertificationsSection />
+              </div>
+
+              <div className="section-wrapper">
+                <Recommendations />
               </div>
 
               <div className="section-wrapper">
