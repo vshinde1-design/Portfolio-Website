@@ -18,6 +18,27 @@ type Project = {
 
 const projects: Project[] = [
   {
+    name: 'Customer 360: RFM & Retention Analytics',
+    desc: 'Built an RFM segmentation engine scoring 5,878 customers into 9 segments, identifying 1,269 Champions driving 77% of revenue and validating findings with statistical rigor.',
+    tech: ['SQL', 'Python', 'Power BI', 'DAX', 'Statistical Analysis'],
+    media: [
+      '/certs/Customer 360/dashboard_1.png',
+      '/certs/Customer 360/dashboard_2.png',
+      '/certs/Customer 360/dashboard_3.png',
+      '/certs/Customer 360/dashboard_4.png',
+      '/certs/Customer 360/dashboard_5.png'
+    ],
+    repo: 'https://github.com/Vedantshi/customer-360-analytics',
+    category: 'Dashboards',
+    impact: 'Delivered a 5-dashboard Power BI platform and identified £673K–£795K in projected recoverable revenue with data-driven retention strategies.',
+    metrics: '5,878 customers · 1M+ transactions · Feb 2026–Apr 2026',
+    details: [
+      'Built an RFM segmentation engine in SQL (NTILE, LEAD, running SUM) across 1M+ transactions, scoring 5,878 customers into 9 segments—identifying 1,269 Champions driving 77% of revenue and 1,357 accounts showing churn signals.',
+      'Validated customer segments with chi-square (p < 0.01) and Cohen\'s d (> 0.8); cohort model revealed 61% first-purchase attrition, quantifying £2.07M at-risk revenue with £621K recoverable at 30% reactivation.',
+      'Delivered a 5-dashboard Power BI platform with 22+ DAX measures, row-level security, and What-If simulation; translated findings into a McKinsey-style case study with 3 prioritised recommendations and £673K–£795K in projected recoverable impact.'
+    ]
+  },
+  {
     name: 'AI-Driven Personalization Engine (The Webster)',
     desc: 'Led a team of six analysts to build a Python-based recommendation engine using 25,000+ structured product attributes, improving outfit ranking relevance and enhancing personalized product discovery for users.',
     tech: ['Python', 'LLMs', 'Product Embeddings', 'Vector Search'],
@@ -42,25 +63,6 @@ const projects: Project[] = [
     details: [
       'Launched an AI grocery assistant using Node.js, React UMD, and Ollama capable of SKU-aware recipe planning, price-based substitutions, and nutrition insights—mirroring functionality used by modern retail personalization tools.',
       'Orchestrated a retail-grade ETL pipeline for fuzzy ingredient matching, unit standardization, and price/calorie enrichment across 600+ grocery products, supporting accurate meal costing and enabling data-driven promotions, inventory decisions, and upsell opportunities.'
-    ]
-  },
-  {
-    name: 'Retail Price Optimization',
-    desc: 'Developed pricing and margin optimization tools combining demand forecasting and interactive pricing simulations.',
-    tech: ['Python', 'XGBoost', 'Tableau', 'SQL'],
-    media: [
-      '/certs/Price Optimization/sales_profit.png',
-      '/certs/Price Optimization/freight_impact.png',
-      '/certs/Price Optimization/xgboost_output.png'
-    ],
-    repo: 'https://github.com/Vedantshi/retail-price-optimization',
-    category: 'Analytics Ops',
-    impact: 'Built demand and margin simulations to inform price decisions and recover hidden margin losses.',
-    metrics: 'Pricing & margin analytics · 06/2024–10/2024',
-    details: [
-      'Developed an XGBoost-based demand prediction model using pricing, competitor benchmarks, and freight-cost features, enabling accurate simulation of price changes and identifying high price-sensitivity products across categories.',
-      'Built a margin optimization framework that quantified how price gaps vs. competitors and freight percentages impact profitability, revealing hidden margin losses and uncovering underperforming SKUs despite strong sales volume.',
-      'Designed interactive Tableau dashboards—including competitor impact analysis, freight-profit dual-axis views, and a pricing what-if simulator—empowering stakeholders to test pricing scenarios (e.g., +5% price → projected demand shift) and make revenue- and margin-aligned pricing decisions.'
     ]
   }
 

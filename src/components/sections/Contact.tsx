@@ -72,42 +72,31 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="flex flex-col items-center text-center p-4">
-              <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-[#241232] text-white">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.09 4.18 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.72c.12.88.37 1.73.73 2.53a2 2 0 0 1-.45 2.11L8.91 10.91a16 16 0 0 0 6 6l1.55-1.55a2 2 0 0 1 2.11-.45c.8.36 1.65.61 2.53.73A2 2 0 0 1 22 16.92z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+              <a href="https://github.com/Vedantshi" target="_blank" rel="noreferrer" className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-[#241232] text-white hover:bg-[#3a1d42] transition-colors">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.11.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.238 1.84 1.238 1.07 1.835 2.807 1.305 3.492.997.108-.775.418-1.305.762-1.605-2.665-.303-5.466-1.333-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.125-.303-.535-1.523.115-3.176 0 0 1.005-.322 3.3 1.23A11.49 11.49 0 0112 5.8c1.02.005 2.045.138 3.003.405 2.28-1.553 3.285-1.23 3.285-1.23.655 1.653.245 2.873.12 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.805 5.625-5.475 5.92.43.37.815 1.1.815 2.22 0 1.606-.015 2.897-.015 3.293 0 .32.215.695.825.577C20.565 21.795 24 17.296 24 12c0-6.63-5.37-12-12-12z" />
                 </svg>
-              </div>
-              <div className="text-sm text-slate-300">Phone</div>
+              </a>
+              <div className="text-sm text-slate-300 mt-3">GitHub</div>
               <div className="mt-2">
-                <CopyButton textToCopy="201-668-7085" className="bg-[#241232] text-white shadow-none px-4 py-2 text-sm">201-668-7085</CopyButton>
+                <a href="https://github.com/Vedantshi" target="_blank" rel="noreferrer">
+                  <CopyButton textToCopy="https://github.com/Vedantshi" className="bg-[#241232] text-white shadow-none px-4 py-2 text-sm">github.com/Vedantshi</CopyButton>
+                </a>
               </div>
             </div>
 
             <div className="flex flex-col items-center text-center p-4">
-              <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-[#241232] text-white">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-                  <path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 1 1 18 0z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-                  <circle cx="12" cy="10" r="2.5" fill="currentColor" />
+              <a href="https://linkedin.com/in/vedantshinde25" target="_blank" rel="noreferrer" className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-[#241232] text-white hover:bg-[#3a1d42] transition-colors">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true">
+                  <path d="M20.45 20.45h-3.55v-5.3c0-1.26-.03-2.88-1.75-2.88-1.75 0-2.02 1.37-2.02 2.79v5.39H9.57V9h3.4v1.56h.05c.47-.89 1.62-1.83 3.33-1.83 3.57 0 4.23 2.35 4.23 5.4v6.32ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm-1.78 13.02h3.55V9H3.56v11.45Z" />
                 </svg>
-              </div>
-              <div className="text-sm text-slate-300">Location</div>
+              </a>
+              <div className="text-sm text-slate-300 mt-3">LinkedIn</div>
               <div className="mt-2">
-                <CopyButton textToCopy="Jersey City, NJ 07307" className="bg-[#241232] text-white shadow-none px-4 py-2 text-sm">Jersey City, NJ 07307</CopyButton>
+                <a href="https://linkedin.com/in/vedantshinde25" target="_blank" rel="noreferrer">
+                  <CopyButton textToCopy="https://linkedin.com/in/vedantshinde25" className="bg-[#241232] text-white shadow-none px-4 py-2 text-sm">linkedin.com/in/vedantshinde25</CopyButton>
+                </a>
               </div>
-            </div>
-          </div>
-
-          <div className="border-t border-white/6 my-6" />
-
-          <div className="text-center">
-            <div className="text-sm text-slate-300 mb-4">Connect with me on social platforms</div>
-            <div className="flex justify-center gap-4">
-              <a href="https://github.com/Vedantshi" target="_blank" rel="noreferrer">
-                <Button variant="outline">GitHub</Button>
-              </a>
-              <a href="https://linkedin.com/in/vedantshinde25" target="_blank" rel="noreferrer">
-                <Button variant="outline">LinkedIn</Button>
-              </a>
             </div>
           </div>
         </Card>

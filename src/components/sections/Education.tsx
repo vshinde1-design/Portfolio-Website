@@ -32,9 +32,9 @@ const EducationSection: React.FC = () => {
                 <div className="text-lg font-semibold text-slate-50">Master of Science in Information Systems</div>
                 <div className="text-sm text-slate-200/80">Stevens Institute of Technology · Hoboken, NJ</div>
               </div>
-              <span className="rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-100">GPA 4.0</span>
+              <span className="rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-100">GPA 3.94</span>
             </div>
-            <div className="text-xs uppercase tracking-[0.18em] text-slate-200/60">Expected May 2026 · Merit scholarship</div>
+            <div className="text-xs uppercase tracking-[0.18em] text-slate-200/60">Expected May 2026 · Beta Gamma Sigma Honor Society</div>
             <ul className="mt-3 space-y-2 text-sm text-slate-200/90">
               <li>Data Analytics &amp; Machine Learning, Marketing Analytics, Supply Chain Analytics</li>
             </ul>
@@ -46,6 +46,7 @@ const EducationSection: React.FC = () => {
                 <div className="text-lg font-semibold text-slate-50">Bachelor of Engineering in Information Technology</div>
                 <div className="text-sm text-slate-200/80">University of Mumbai · Mumbai, India</div>
               </div>
+              <span className="rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-100">GPA 3.44</span>
             </div>
             <div className="text-xs uppercase tracking-[0.18em] text-slate-200/60">Completed May 2024</div>
             <ul className="mt-3 space-y-2 text-sm text-slate-200/90">

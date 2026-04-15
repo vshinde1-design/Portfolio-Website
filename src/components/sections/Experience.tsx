@@ -5,15 +5,27 @@ import { motion } from 'framer-motion'
 
 const experiences = [
   {
-    role: 'Research Data Analyst',
+    role: 'Research Assistant, Data Analytics',
     org: 'Stevens Institute of Technology',
     loc: 'Hoboken, NJ, USA',
-    dates: '11/2025 – Present',
-    impact: 'Enabled faster cross-region decision-making through standardized analytics frameworks covering 12+ cities.',
+    dates: 'Nov 2025 – Apr 2026',
+    impact: 'Standardized and merged operational datasets to enable cross-city analysis and informed transportation investment decisions.',
     bullets: [
-      'Standardized mobility datasets from 12+ cities using Python (Pandas, NumPy, GeoPandas), achieving an estimated 20% reduction in data inconsistencies and 25-30% faster processing.',
-      'Evaluated neighborhood-level supply–demand equity across 200+ census tracts using Gini and Alpha fairness metrics, enabling researchers to prioritize underserved regions for transportation policy recommendations.',
-      'Reduced manual reporting workload by 45% by developing reusable analytics scripts and automated Power BI dashboards that streamlined recurring research deliverables and stakeholder presentations.'
+      'Standardized and merged operational datasets from 12+ U.S. cities using Python (Pandas, NumPy, GeoPandas), reducing data inconsistencies by 20% and cutting processing time by 30%.',
+      'Quantified service equity gaps across 12+ U.S. cities by applying statistical distribution metrics across 5 operational dimensions, delivering findings that directly informed multi-city transportation investment recommendations.',
+      'Automated recurring reporting with reusable Python scripts and Power BI dashboards, reducing manual workload by 45% and streamlining stakeholder deliverables.'
+    ]
+  },
+  {
+    role: 'Research Assistant, Data Analytics (Summer Fellow)',
+    org: 'Stevens Institute of Technology',
+    loc: 'Hoboken, NJ, USA',
+    dates: 'May 2025 – Jul 2025',
+    impact: 'Built a data pipeline consolidating 5M+ records from 8 transit systems, enabling the first cross-regional performance benchmarking across 9 cities.',
+    bullets: [
+      'Built a Python + AWS data pipeline consolidating 5M+ operational records from 8 transit systems into a centralized dataset, enabling the research team\'s first cross-regional performance benchmarking across 9 cities.',
+      'Performed demographic and operational analysis across 9 regions using SQL and Python, uncovering 3 key service coverage gaps that were cited in the research team\'s policy recommendation report to city-level transit agencies.',
+      'Developed Tableau dashboards visualizing the top 3 drivers of operational delays by geography, presented to stakeholders at 4 city-level agencies to guide resource allocation decisions.'
     ]
   },
   {
@@ -28,39 +40,15 @@ const experiences = [
     ]
   },
   {
-    role: 'Graduate Yielding Assistant',
-    org: 'Graduate Admissions, Stevens Institute of Technology',
-    loc: 'Hoboken, NJ, USA',
-    dates: '10/2025 – 11/2025',
-    impact: 'Improved onboarding efficiency and cross-department coordination for incoming graduate students.',
-    bullets: [
-      'Improved onboarding efficiency for 100+ incoming graduate students by serving as their primary contact for questions on housing, orientation, and financial aid; escalated complex cases to the correct departments, reducing follow-up volume and ensuring faster resolution.',
-      'Strengthened student support workflows by documenting detailed call notes in Excel and uploading structured insights into Slate, enabling Graduate Admissions to identify recurring concerns and streamline cross-department communication.',
-      'Enhanced student confidence and engagement through daily outreach calls, providing clear guidance, resolving concerns with empathy, and helping incoming students transition smoothly into their graduate programs.'
-    ]
-  },
-  {
-    role: 'Research Data Analyst (Summer Fellow)',
-    org: 'Stevens Institute of Technology',
-    loc: 'Hoboken, NJ, USA',
-    dates: '05/2025 – 07/2025',
-    impact: 'Stabilized large-scale analytics workflows and identified systemic equity disparities in vehicle availability.',
-    bullets: [
-      'Designed and implemented a Python and AWS data pipeline consolidating mobility records from 8 transportation systems into a centralized research dataset, processing millions of records.',
-      'Pinpointed critical service gaps across 9 urban neighborhoods by analyzing demographic and transit usage datasets, directly informing research on transportation equity and operational distribution strategies for improved accessibility.',
-      'Designed user-friendly Power BI dashboards, which helped analysts to identify three biggest causes of transit delays across different geographical locations, supporting data-driven decisions for infrastructure projects.'
-    ]
-  },
-  {
     role: 'Student Data Analyst',
     org: 'Terna Engineering College',
     loc: 'Navi Mumbai, MH, India',
-    dates: '02/2023 – 04/2024',
-    impact: 'Reduced supplier delays and uncovered product affinity patterns driving merchandising strategy.',
+    dates: 'Feb 2023 – May 2024',
+    impact: 'Designed inventory analytics pipeline and created first unified dataset, cutting data prep time by 35%.',
     bullets: [
-      'Analyzed 6,000+ bookstore transactions across 300+ SKUs using SQL queries to identify seasonal demand patterns and slow-moving inventory trends influencing procurement and restocking strategies.',
-      'Built Power BI dashboards tracking supplier fulfillment performance, demand fluctuations, and inventory turnover KPIs, reducing manual report preparation time by approximately 40%.',
-      'Generated semester-level demand forecasts using moving average models in Python and Excel, improving inventory allocation planning and reducing stock shortages during peak demand periods by an estimated 15%.'
+      'Designed an inventory analytics pipeline querying 50,000+ rows in SQL and restructuring 3 years of procurement data with Pandas across 8+ categories, creating the first unified dataset and cutting data prep time by 35%.',
+      'Deployed a 4-dashboard Power BI suite covering inventory turnover, supplier lead times, and enrollment-driven demand — eliminated legacy Excel reporting and cut prep time by 40%.',
+      'Constructed a Python forecasting model using moving averages, exponential smoothing, and enrollment-driven calendar variables; validated against 3 prior years of data and reduced stockouts by 15% during peak periods.'
     ]
   }
 ]
