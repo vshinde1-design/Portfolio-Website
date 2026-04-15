@@ -11,7 +11,7 @@ const recommendations = [
     institution: 'Stevens Institute of Technology',
     relation: 'Research Mentor, Summer 2025',
     linkedIn: true,
-    photo: '/certs/VioletChen.jpg' // Update with actual photo path when available
+    photo: '/certs/prof_image'
   }
 ]
 
