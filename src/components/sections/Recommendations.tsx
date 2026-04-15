@@ -11,6 +11,7 @@ const recommendations = [
     institution: 'Stevens Institute of Technology',
     relation: 'Research Mentor',
     linkedIn: true,
+    linkedInUrl: 'https://www.linkedin.com/in/violetchen621/',
     photo: '/certs/prof_image.jpg'
   }
 ]
@@ -84,11 +85,11 @@ const Recommendations: React.FC = () => {
                   {/* Name and LinkedIn badge */}
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold text-slate-50">{rec.name}</h3>
-                    {rec.linkedIn && (
-                      <div className="flex items-center gap-1 mt-0.5">
+                    {rec.linkedIn && rec.linkedInUrl && (
+                      <a href={rec.linkedInUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 mt-0.5 hover:opacity-80 transition-opacity">
                         <span className="text-xs text-slate-400">Verified on LinkedIn</span>
                         <LinkedInIcon className="w-3.5 h-3.5 text-blue-400" />
-                      </div>
+                      </a>
                     )}
                   </div>
                 </div>
