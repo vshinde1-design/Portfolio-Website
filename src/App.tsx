@@ -96,6 +96,10 @@ export default function App() {
               </div>
 
               <div className="section-wrapper">
+                <Recommendations />
+              </div>
+
+              <div className="section-wrapper">
                 <Projects />
               </div>
 
@@ -109,10 +113,6 @@ export default function App() {
 
               <div className="section-wrapper">
                 <CertificationsSection />
-              </div>
-
-              <div className="section-wrapper">
-                <Recommendations />
               </div>
 
               <div className="section-wrapper">
