@@ -5,50 +5,39 @@ import { motion } from 'framer-motion'
 
 const experiences = [
   {
-    role: 'Research Assistant, Data Analytics',
+    role: 'Data Analyst',
     org: 'Stevens Institute of Technology',
-    loc: 'Hoboken, NJ, USA',
+    loc: 'Hoboken, NJ',
     dates: 'Nov 2025 – Apr 2026',
-    impact: 'Standardized and merged operational datasets to enable cross-city analysis and informed transportation investment decisions.',
+    impact: 'Unified operational datasets across 12+ cities to enable analytics and inform transportation investment decisions.',
     bullets: [
-      'Standardized and merged operational datasets from 12+ U.S. cities using Python (Pandas, NumPy, GeoPandas), reducing data inconsistencies by 20% and cutting processing time by 30%.',
-      'Quantified service equity gaps across 12+ U.S. cities by applying statistical distribution metrics across 5 operational dimensions, delivering findings that directly informed multi-city transportation investment recommendations.',
-      'Automated recurring reporting with reusable Python scripts and Power BI dashboards, reducing manual workload by 45% and streamlining stakeholder deliverables.'
+      'Cut data inconsistencies 20% and reduced processing time 30% by unifying operational datasets across 12+ U.S. cities, standardizing disparate city feeds in Python (Pandas, NumPy, GeoPandas) through schema validation and geospatial joins',
+      'Shaped multi-city transportation investment recommendations by quantifying service equity gaps across 12+ U.S. cities, applying statistical distribution metrics (Gini, coefficient of variation, quantile analysis) across 5 operational dimensions',
+      'Automated recurring reporting to eliminate 45% of manual workload, building reusable Python scripts with parameterized refresh logic that streamlined stakeholder deliverables across the research team'
     ]
   },
   {
-    role: 'Research Assistant, Data Analytics (Summer Fellow)',
+    role: 'Data Analyst (Summer Fellow)',
     org: 'Stevens Institute of Technology',
-    loc: 'Hoboken, NJ, USA',
+    loc: 'Hoboken, NJ',
     dates: 'May 2025 – Jul 2025',
-    impact: 'Built a data pipeline consolidating 5M+ records from 8 transit systems, enabling the first cross-regional performance benchmarking across 9 cities.',
+    impact: 'Architected a Python and AWS pipeline enabling the team\'s first cross-regional benchmarking across 9 cities.',
     bullets: [
-      'Built a Python + AWS data pipeline consolidating 5M+ operational records from 8 transit systems into a centralized dataset, enabling the research team\'s first cross-regional performance benchmarking across 9 cities.',
-      'Performed demographic and operational analysis across 9 regions using SQL and Python, uncovering 3 key service coverage gaps that were cited in the research team\'s policy recommendation report to city-level transit agencies.',
-      'Developed Tableau dashboards visualizing the top 3 drivers of operational delays by geography, presented to stakeholders at 4 city-level agencies to guide resource allocation decisions.'
+      'Enabled the research team\'s first cross-regional benchmarking across 9 cities by architecting a Python and AWS pipeline (S3 staging, EC2 processing), consolidating 5M+ operational records from 8 transit systems into a centralized dataset',
+      'Uncovered 3 critical service coverage gaps across 9 regions through demographic and operational analysis in SQL and Python (joins, aggregations); findings cited in the team\'s policy recommendation report to city-level transit agencies',
+      'Guided resource allocation at 4 city-level agencies by building Tableau dashboards visualizing the top 3 drivers of operational delays by geography, presented directly to stakeholders to inform service planning'
     ]
   },
   {
-    role: 'Campus Recreation Assistant',
-    org: 'Stevens Institute of Technology',
-    loc: 'Hoboken, NJ, USA',
-    dates: '09/2024 – Present',
-    impact: 'Increased event turnout through data-driven scheduling and operational optimization.',
-    bullets: [
-      'Forecasted participation trends across 15+ recreational programs using rolling average models in Excel, supporting data-informed staffing allocation and equipment scheduling decisions.',
-      'Structured checkout and usage datasets using PivotTables and validation rules, improving inventory visibility and enabling more efficient resource planning for facilities serving 200+ daily visitors.'
-    ]
-  },
-  {
-    role: 'Student Data Analyst',
+    role: 'Data Analyst',
     org: 'Terna Engineering College',
     loc: 'Navi Mumbai, MH, India',
     dates: 'Feb 2023 – May 2024',
-    impact: 'Designed inventory analytics pipeline and created first unified dataset, cutting data prep time by 35%.',
+    impact: 'Consolidated 3 years of procurement data and deployed a 4-dashboard analytics suite, cutting prep time 35-40%.',
     bullets: [
-      'Designed an inventory analytics pipeline querying 50,000+ rows in SQL and restructuring 3 years of procurement data with Pandas across 8+ categories, creating the first unified dataset and cutting data prep time by 35%.',
-      'Deployed a 4-dashboard Power BI suite covering inventory turnover, supplier lead times, and enrollment-driven demand — eliminated legacy Excel reporting and cut prep time by 40%.',
-      'Constructed a Python forecasting model using moving averages, exponential smoothing, and enrollment-driven calendar variables; validated against 3 prior years of data and reduced stockouts by 15% during peak periods.'
+      'Consolidated 3 years of procurement data into the department\'s first unified dataset, designing an inventory analytics pipeline that queried 50,000+ rows in SQL and restructured records with Pandas across 8+ categories, cutting data prep time 35%',
+      'Replaced legacy Excel reporting and improved prep time 40% by deploying a 4-dashboard Power BI suite covering inventory turnover, supplier lead times, and enrollment-driven demand with drill-through navigation',
+      'Forecasted peak-period demand to reduce stockouts 15%, building a Python model using moving averages, exponential smoothing, and enrollment-driven calendar variables, validated against 3 prior years of data'
     ]
   }
 ]
