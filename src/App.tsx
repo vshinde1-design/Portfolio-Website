@@ -7,7 +7,7 @@ import About from './components/sections/About'
 import Experience from './components/sections/Experience'
 import Projects from './components/sections/Projects'
 import Skills from './components/sections/Skills'
-import { EducationSection, CertificationsSection } from './components/sections/Education'
+import { EducationSection, HonorsSection, CertificationsSection } from './components/sections/Education'
 import Recommendations from './components/sections/Recommendations'
 import Contact from './components/sections/Contact'
 import UnifiedAnalyticsBackground from './components/UnifiedAnalyticsBackground'
@@ -109,6 +109,10 @@ export default function App() {
 
               <div className="section-wrapper">
                 <EducationSection />
+              </div>
+
+              <div className="section-wrapper">
+                <HonorsSection />
               </div>
 
               <div className="section-wrapper">
