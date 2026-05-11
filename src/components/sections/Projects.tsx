@@ -70,7 +70,7 @@ const projects: Project[] = [
 
 type ProjectFilter = Project['category'] | 'All'
 
-const filters: ProjectFilter[] = ['All', 'Analytics Ops', 'AI & ML', 'Dashboards']
+const filters: ProjectFilter[] = ['All', 'AI & ML', 'Dashboards']
 
 const Projects: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<ProjectFilter>('All')
