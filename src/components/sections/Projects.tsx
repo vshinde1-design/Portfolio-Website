@@ -39,8 +39,8 @@ const projects: Project[] = [
     desc: 'Built an RFM segmentation engine scoring 5,878 customers into 9 segments, identifying 1,269 Champions driving 77% of revenue and validating findings with statistical rigor.',
     tech: ['SQL', 'Python', 'Power BI', 'DAX', 'Statistical Analysis'],
     media: [
-      '/certs/Customer 360/dashboard_1.png',
       '/certs/Customer 360/dashboard_2.png',
+      '/certs/Customer 360/dashboard_1.png',
       '/certs/Customer 360/dashboard_3.png',
       '/certs/Customer 360/dashboard_4.png',
       '/certs/Customer 360/dashboard_5.png'
