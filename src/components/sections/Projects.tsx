@@ -50,20 +50,6 @@ const projects: Project[] = [
       'Led a team of six analysts to build a Python-based recommendation engine using 25,000+ structured product attributes, improving outfit ranking relevance and enhancing personalized product discovery for users.',
       'Reduced manual product validation effort by 30% by analyzing API response data and implementing Excel-based validation frameworks to detect inconsistent URLs and incomplete product metadata.'
     ]
-  },
-  {
-    name: 'Grocerly – AI Grocery & Retail Assistant',
-    desc: 'Launched an AI grocery assistant capable of SKU-aware recipe planning, price-based substitutions, and nutrition insights across a normalized catalog.',
-    tech: ['Node.js', 'React', 'Ollama', 'ETL', 'MySQL'],
-    media: '/certs/Grocerly/Screenshot 2025-11-24 104339.png',
-    repo: 'https://github.com/Vedantshi/grocery-assistant-chatbot.git',
-    category: 'AI & ML',
-    impact: 'Enabled SKU-aware recipe recommendations and retail-grade ETL for accurate meal costing and inventory-aware substitutions.',
-    metrics: '600+ normalized products · 09/2025–11/2025',
-    details: [
-      'Launched an AI grocery assistant using Node.js, React UMD, and Ollama capable of SKU-aware recipe planning, price-based substitutions, and nutrition insights—mirroring functionality used by modern retail personalization tools.',
-      'Orchestrated a retail-grade ETL pipeline for fuzzy ingredient matching, unit standardization, and price/calorie enrichment across 600+ grocery products, supporting accurate meal costing and enabling data-driven promotions, inventory decisions, and upsell opportunities.'
-    ]
   }
 
 ]
