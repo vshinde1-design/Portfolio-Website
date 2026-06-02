@@ -53,14 +53,19 @@ const projects: Project[] = [
   },
   {
     name: 'Supply Chain Intelligence: Global Logistics Analytics',
-    desc: 'End-to-end global logistics optimization platform tracking shipments, inventory, and distribution networks across multiple regions.',
+    desc: 'Engineered an end-to-end ETL pipeline and analytics platform to optimize global logistics across 5 markets and 23 regions, delivering real-time visibility into shipment reliability, fulfillment risk, and route profitability.',
     tech: ['SQL', 'Python', 'Power BI', 'ETL', 'Forecasting'],
-    media: [],
+    media: [
+      '/certs/Supply Chain Intelligence/Supply Chain Control Tower.png',
+      '/certs/Supply Chain Intelligence/Route Segment Scorecard.png'
+    ],
     category: 'Analytics Ops',
-    impact: 'Real-time visibility into supply chain KPIs and data-driven logistics optimization.',
-    metrics: 'Ongoing',
+    impact: 'Surfaced operational risk across fulfillment corridors and translated raw logistics data into executive-level decisions on shipping, routing, and inventory optimization.',
+    metrics: '180,000+ shipments · 5 markets · 23 regions · Ongoing',
     details: [
-      'Building comprehensive analytics framework for global supply chain visibility and performance tracking.'
+      'Engineered an end-to-end ETL pipeline in Python that cleaned and transformed 180,000+ global shipment records across 5 markets and 23 regions, resolving Latin-1 encoding issues, removing duplicates, and deriving delivery dates and route segment dimensions to create an analysis-ready dataset for downstream SQL and Power BI layers.',
+      'Built a route segment reliability scorecard and order fulfillment risk model in SQL, scoring operational risk across 4 dimensions (cancellation, fraud, late delivery, and discount erosion) using PERCENT_RANK normalization and IQR-based anomaly detection to flag the highest-risk fulfillment corridors and quantify freight cost erosion on product margins.',
+      'Designed a 5-dashboard Power BI platform with DAX measures, compound What-If simulation, and decomposition tree visuals that surfaced late-delivery patterns, stockout risk, and unprofitable shipping routes, translating raw operational data into executive-level decisions on shipping, routing, and inventory.'
     ]
   }
 
