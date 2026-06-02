@@ -186,7 +186,7 @@ const Hero: React.FC = () => {
             </span>
           </h1>
 
-          <p className="mt-6 text-sm md:text-base font-medium text-slate-200 dark:text-slate-100/95">Master's Student | Information Systems</p>
+          <p className="mt-6 text-sm md:text-base font-medium text-slate-200 dark:text-slate-100/95">Data Analyst | Stevens Institute of Technology</p>
 
           <div className="mt-4 flex flex-wrap items-center justify-center gap-4">
             <ScrollLink to="contact" smooth={true} offset={-80}>
