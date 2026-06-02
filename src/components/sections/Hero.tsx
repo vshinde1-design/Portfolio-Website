@@ -202,7 +202,7 @@ const Hero: React.FC = () => {
             </Button>
           </div>
 
-          <div className="mt-6 text-base text-slate-100/90 leading-relaxed">Analytics should create clarity, not confusion — every model, metric, or dashboard should make decisions easier.</div>
+          <div className="mt-6 text-base text-slate-100/90 leading-relaxed">I believe the point of any model or report is simple. Someone should walk away knowing what to do next.</div>
 
           <div className="mt-10 pt-6 border-t border-white/15 flex flex-wrap items-center justify-center gap-10 text-slate-100/90">
             <a href="https://github.com/Vedantshi" className="group flex items-center gap-3 text-sm font-semibold tracking-[0.12em] uppercase hover:text-white transition-colors" aria-label="GitHub profile">
