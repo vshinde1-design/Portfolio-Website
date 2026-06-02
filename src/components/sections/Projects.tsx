@@ -50,13 +50,25 @@ const projects: Project[] = [
       'Led a team of six analysts to build a Python-based recommendation engine using 25,000+ structured product attributes, improving outfit ranking relevance and enhancing personalized product discovery for users.',
       'Reduced manual product validation effort by 30% by analyzing API response data and implementing Excel-based validation frameworks to detect inconsistent URLs and incomplete product metadata.'
     ]
+  },
+  {
+    name: 'Supply Chain Intelligence: Global Logistics Analytics',
+    desc: 'End-to-end global logistics optimization platform tracking shipments, inventory, and distribution networks across multiple regions.',
+    tech: ['SQL', 'Python', 'Power BI', 'ETL', 'Forecasting'],
+    media: [],
+    category: 'Analytics Ops',
+    impact: 'Real-time visibility into supply chain KPIs and data-driven logistics optimization.',
+    metrics: 'Ongoing',
+    details: [
+      'Building comprehensive analytics framework for global supply chain visibility and performance tracking.'
+    ]
   }
 
 ]
 
 type ProjectFilter = Project['category'] | 'All'
 
-const filters: ProjectFilter[] = ['All', 'AI & ML', 'Dashboards']
+const filters: ProjectFilter[] = ['All', 'AI & ML', 'Analytics Ops', 'Dashboards']
 
 const Projects: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<ProjectFilter>('All')
