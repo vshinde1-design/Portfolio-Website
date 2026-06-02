@@ -18,6 +18,23 @@ type Project = {
 
 const projects: Project[] = [
   {
+    name: 'Supply Chain Intelligence: Global Logistics Analytics',
+    desc: 'Engineered an end-to-end ETL pipeline and analytics platform to optimize global logistics across 5 markets and 23 regions, delivering real-time visibility into shipment reliability, fulfillment risk, and route profitability.',
+    tech: ['SQL', 'Python', 'Power BI', 'ETL', 'Forecasting'],
+    media: [
+      '/certs/Supply Chain Intelligence/Supply Chain Control Tower.png',
+      '/certs/Supply Chain Intelligence/Route Segment Scorecard.png'
+    ],
+    category: 'Analytics Ops',
+    impact: 'Surfaced operational risk across fulfillment corridors and translated raw logistics data into executive-level decisions on shipping, routing, and inventory optimization.',
+    metrics: '180,000+ shipments · 5 markets · 23 regions · Ongoing',
+    details: [
+      'Engineered an end-to-end ETL pipeline in Python that cleaned and transformed 180,000+ global shipment records across 5 markets and 23 regions, resolving Latin-1 encoding issues, removing duplicates, and deriving delivery dates and route segment dimensions to create an analysis-ready dataset for downstream SQL and Power BI layers.',
+      'Built a route segment reliability scorecard and order fulfillment risk model in SQL, scoring operational risk across 4 dimensions (cancellation, fraud, late delivery, and discount erosion) using PERCENT_RANK normalization and IQR-based anomaly detection to flag the highest-risk fulfillment corridors and quantify freight cost erosion on product margins.',
+      'Designed a 5-dashboard Power BI platform with DAX measures, compound What-If simulation, and decomposition tree visuals that surfaced late-delivery patterns, stockout risk, and unprofitable shipping routes, translating raw operational data into executive-level decisions on shipping, routing, and inventory.'
+    ]
+  },
+  {
     name: 'Customer 360: RFM & Retention Analytics',
     desc: 'Built an RFM segmentation engine scoring 5,878 customers into 9 segments, identifying 1,269 Champions driving 77% of revenue and validating findings with statistical rigor.',
     tech: ['SQL', 'Python', 'Power BI', 'DAX', 'Statistical Analysis'],
@@ -49,23 +66,6 @@ const projects: Project[] = [
     details: [
       'Led a team of six analysts to build a Python-based recommendation engine using 25,000+ structured product attributes, improving outfit ranking relevance and enhancing personalized product discovery for users.',
       'Reduced manual product validation effort by 30% by analyzing API response data and implementing Excel-based validation frameworks to detect inconsistent URLs and incomplete product metadata.'
-    ]
-  },
-  {
-    name: 'Supply Chain Intelligence: Global Logistics Analytics',
-    desc: 'Engineered an end-to-end ETL pipeline and analytics platform to optimize global logistics across 5 markets and 23 regions, delivering real-time visibility into shipment reliability, fulfillment risk, and route profitability.',
-    tech: ['SQL', 'Python', 'Power BI', 'ETL', 'Forecasting'],
-    media: [
-      '/certs/Supply Chain Intelligence/Supply Chain Control Tower.png',
-      '/certs/Supply Chain Intelligence/Route Segment Scorecard.png'
-    ],
-    category: 'Analytics Ops',
-    impact: 'Surfaced operational risk across fulfillment corridors and translated raw logistics data into executive-level decisions on shipping, routing, and inventory optimization.',
-    metrics: '180,000+ shipments · 5 markets · 23 regions · Ongoing',
-    details: [
-      'Engineered an end-to-end ETL pipeline in Python that cleaned and transformed 180,000+ global shipment records across 5 markets and 23 regions, resolving Latin-1 encoding issues, removing duplicates, and deriving delivery dates and route segment dimensions to create an analysis-ready dataset for downstream SQL and Power BI layers.',
-      'Built a route segment reliability scorecard and order fulfillment risk model in SQL, scoring operational risk across 4 dimensions (cancellation, fraud, late delivery, and discount erosion) using PERCENT_RANK normalization and IQR-based anomaly detection to flag the highest-risk fulfillment corridors and quantify freight cost erosion on product margins.',
-      'Designed a 5-dashboard Power BI platform with DAX measures, compound What-If simulation, and decomposition tree visuals that surfaced late-delivery patterns, stockout risk, and unprofitable shipping routes, translating raw operational data into executive-level decisions on shipping, routing, and inventory.'
     ]
   }
 
